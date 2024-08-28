@@ -1,0 +1,307 @@
+//single inheritence
+
+package singleinheritence;
+
+ class  Parent {
+	public void parent() {
+		System.out.println("i am parent");
+	}
+	
+}
+public class Single extends Parent{
+	public void child() {
+		System.out.println("i am child");
+	}
+	public static void main(String[] args) {
+		Single sc=new Single();
+		sc.parent();
+		sc.child();
+		
+	}
+	
+}
+
+//multi level inheritence
+
+package singleinheritence;
+
+class GF {
+ public void m1() {
+	 System.out.println("i am grandpa");
+ }
+}
+class F extends GF{
+	public void m2() {
+		System.out.println("i am father");
+	}
+}
+public class Multi extends F{
+	public void m3() {
+		System.out.println("i am grandson");
+	}
+	public static void main(String[] args) {
+		Multi mt=new Multi();
+		mt.m3();
+		mt.m2();
+		mt.m1();
+	}
+}
+
+
+//Hierarachial inheritence
+
+package singleinheritence;
+
+class Father {
+    public void m1() {
+    	System.out.println("i am ur father");
+    }
+}
+class  Son extends Father{
+	public void m2() {
+		System.out.println("i am ur Son");
+	}
+}
+public class Hierarcy extends Father{
+	public void m3() {
+		System.out.println("i am ur daughter");
+	}
+	public static void main(String[] args) {
+		Hierarcy hr=new Hierarcy();
+		hr.m3();
+		Son sn=new Son();
+		sn.m2();
+		hr.m1();
+		sn.m1();
+	}
+}
+
+//Hybrid Inheritence
+
+package singleinheritence;
+
+class Parent1 {
+	public void m1() {
+		System.out.println("i am parent");
+	}
+
+}
+class Child1 extends Parent1{
+	public void m2() {
+		System.out.println("i am child1");
+	}
+}
+class Child2 extends Child1{
+	public void m3() {
+		System.out.println("i am child2");
+	}
+}
+public class Hybrid extends Child1{
+	public void m4() {
+		System.out.println("i am child4");
+	}
+	public static void main(String[] args) {
+		Hybrid hb=new Hybrid();
+		hb.m4();
+		Child2 cd2=new Child2();
+		cd2.m3();
+		hb.m2();
+		hb.m1();
+	}
+	
+}
+
+//multiple inheritence
+
+package singleinheritence;
+
+class Father1 {
+   public void m1() {
+	   System.out.println("i am ur father listen to me");
+   }
+}
+class Mother {
+	   public void m2() {
+		   System.out.println("i am ur Mother listen to me");
+	   }
+	}
+public class Multiple extends Father1{
+	public void m3() {
+		System.out.println("whom i have to listen");
+	}
+	public static void main(String[] args) {
+		Multiple mtpl=new Multiple();
+		mtpl.m1();
+		mtpl.m3();
+		 
+		
+		
+	}
+}
+
+//super keyword example:
+package singleinheritence;
+class SuperCon{
+	int a=20;
+	public SuperCon() {
+		this(67);
+		System.out.println("i am a default parent constructor: "+a);
+	}
+	 public SuperCon(int age) {
+		   //this.m1();
+		   System.out.println("i am a parent param constructor: "+age);
+	   }
+}
+public class Thiscon extends SuperCon {
+   int a=20;
+   public Thiscon() {
+	   this(12);
+	   System.out.println("i am a default constructor: "+a);
+   }
+   public Thiscon(int age) {
+	   this.m1();
+	   System.out.println("i am a param constructor: "+age);
+   }
+   public void m1() {
+	   System.out.println("i am a child m1 method: "+a);
+   }
+   public static void main(String[] args) {
+	Thiscon tc=new Thiscon();
+	
+}
+}
+
+//this keyword example:
+
+package singleinheritence;
+
+class superDemo{
+	int salary=50000;
+	public void getSalary(int salary){
+		salary=60000;
+		System.out.println("my parent salary is "+salary);
+		 
+	}
+}
+public class ThisDemo extends superDemo{
+   int salary=40000;
+   public void getSalary(int salary) {
+	   salary=30000;
+	   System.out.println("my salary is"+salary);
+	   System.out.println("my global salary is "+this.salary);
+	   System.out.println("object is"+this);
+	   super.getSalary(70000);
+	   System.out.println("my parent global salary is "+super.salary);
+   }
+   public static void main(String[] args) {
+	ThisDemo td=new ThisDemo();
+	td.getSalary(20000);
+}
+}
+
+//example1
+package singleinheritence;
+class Vehicle{
+	String make;
+	int model;
+	int year;
+	public Vehicle(String make,int model,int year) {
+		this.make=make;
+		this.model=model;
+		this.year=year;
+	}
+	public void displayInfo() {
+		System.out.println("make:"+make);
+		System.out.println("model: "+model);
+		System.out.println("year: "+year);
+	}
+}
+class Car extends Vehicle{
+	int numberofdoors;
+	public Car(String make,int model,int year,int numberofdoors) {
+		super(make,model,year);
+		this.numberofdoors=numberofdoors;
+	}
+	public void displayInfo() {
+		 super.displayInfo();
+		 System.out.println("the number of doors are:"+numberofdoors);
+	}
+	
+}
+class Truck extends Vehicle{
+	double loadcapacity;
+
+	public Truck(String make, int model, int year, double loadcapacity) {
+		super(make, model, year);
+		this.loadcapacity = loadcapacity;
+	}
+	public void displayInfo() {
+		 super.displayInfo();
+		 System.out.println("the loadcapacity is:"+loadcapacity);
+	}
+}
+public class Vehicleexample  {
+	
+   public static void main(String[] args) {
+	 Car c=new Car("usa",11,2016,4);
+	 Truck t=new Truck("uk",12,2000,150.54);
+	 c.displayInfo();
+	 System.out.println();
+	 t.displayInfo();
+	
+}
+}
+
+//Example2
+
+package singleinheritence;
+class Ecom{
+	int pid;
+	String pname;
+	double price;
+	public Ecom(int pid,String pname,double price) {
+		this.pid=pid;
+		this.pname=pname;
+		this.price=price;
+	}
+	public void displayInfo() {
+		System.out.println("the pid is: "+pid);
+		System.out.println("the pname is: "+pname);
+		System.out.println("the price is: "+price);
+	}
+}
+class Electronics extends Ecom{
+	int warranty;
+	public Electronics(int pid,String pname,double price,int warranty) {
+		super(pid,pname,price);
+		this.warranty=warranty;
+	}
+	public void displayInfo() {
+		 super.displayInfo();
+		 System.out.println("the warranty is: "+warranty);
+	}
+}
+class Clothes extends Ecom{
+	int sizeofcloth;
+
+	public Clothes(int pid, String pname, double price, int sizeofcloth) {
+		super(pid, pname, price);
+		this.sizeofcloth = sizeofcloth;
+	}
+	public void displayInfo() {
+		 super.displayInfo();
+		 System.out.println("the  sizeofcloth is: "+sizeofcloth);
+	}
+	
+}
+public class Ecommercetesting {
+  public static void main(String[] args) {
+	Electronics e=new Electronics(123,"fridge",543,4);
+	Clothes c=new Clothes(432,"pant",576,77);
+	e.displayInfo();
+	System.out.println();
+	c.displayInfo();
+}
+}
+
+

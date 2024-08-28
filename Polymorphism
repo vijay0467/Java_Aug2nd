@@ -1,0 +1,127 @@
+//method overloading
+package polymorphism1;
+
+public class Methdoverloading {
+	public void addition(int a,int b) {
+		System.out.println("the addition of first method:"+(a+b));  //ML with different params
+	}
+	public void addition(int a,int b,int c) {
+		System.out.println("the addition of second method:"+(a+b+c));
+	}
+	public void addition(float a,double b) {
+		System.out.println("the addition of third method:"+(a+b)); //ML with different type
+	}
+	public void addition(float a,int b) {
+		System.out.println("the addition of fourth method:"+(a+b)); //ML with different order
+	}
+	
+public static void main(String[] args) {
+	Methdoverloading m1=new Methdoverloading();
+	m1.addition(12,13);
+	m1.addition(12,13,14);
+	m1.addition(12.45f,13.88);
+	m1.addition(12.76f,13);
+	m1.addition('a', 'b'); //type promotion from char to int so output is 195
+	 
+}
+}
+
+
+//method overriding
+
+package polymorphism1;
+class Parents{
+	public void property() {
+		System.out.println("100 crore property");
+	}
+	public void sleep() {
+		System.out.println("sleep early");
+	}
+}
+ 
+public class Methodovriding extends Parents{
+	@Override
+	public void sleep() {
+		System.out.println("i don't sleep early");
+	}
+	
+public static void main(String[] args) {
+	Methodovriding mo=new Methodovriding();
+	mo.sleep();
+	mo.property();
+}
+}
+
+//example1:Moverloading
+package polymorphism1;
+
+public class Prodsearch {
+public void search(int pid) {
+	System.out.println(pid);
+}
+public void search(String pname) {
+	System.out.println(pname);
+}
+public void search(int pid,String pname) {
+	System.out.println(pid+" "+pname);
+}
+public static void main(String[] args) {
+	Prodsearch p=new Prodsearch();
+	p.search(123);
+	p.search("laptop");
+	p.search(123,"mobile");
+}
+}
+
+//example2:
+
+package polymorphism1;
+
+public class Findarea {
+	public void area(double r) {
+		System.out.println(Math.PI*r*r);
+	}
+	public void area(int a,int b) {
+		System.out.println("area of rectangle:"+(a*b));
+	}
+	public void area(int s) {
+		System.out.println("area of square: "+(s*s));
+	}
+public static void main(String[] args) {
+	Findarea fa=new Findarea();
+	fa.area(67);
+	fa.area(6);
+	fa.area(3, 4);
+}
+}
+ 
+//example3:methodoverriding
+
+package polymorphism1;
+class Normalnote{
+	public void sendnote() {
+		System.out.println("its a normalnot");
+	}
+}
+class Emailnote extends Normalnote{
+	@Override
+	public void sendnote() {
+		System.out.println("its a emailnote");
+	}
+}
+public class Whatsappnote extends Normalnote {
+	@Override
+	public void sendnote() {
+		System.out.println("its a whatsappnote");
+	}
+public static void main(String[] args) {
+	Normalnote n=new Normalnote();
+	Normalnote n1=new Emailnote();
+	Normalnote n2=new Whatsappnote();
+	n.sendnote();
+	n1.sendnote();
+	n2.sendnote();
+}
+}
+
+

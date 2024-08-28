@@ -1,0 +1,762 @@
+String Assignment:
+
+//Q1
+package stringsass;
+//Write a program to get the contents of a given string as a byte array
+public class Bytearr {
+public static void main(String[] args) {
+	String s="Tutor Joes Computer Education";
+	byte[] ba=s.getBytes();
+	for(int i=0;i<ba.length;i++) {
+		System.out.print(ba[i]+" ");
+	}
+	String s2=new String(ba);
+	System.out.println((s2));
+}
+}
+
+//Q2
+package stringsass;
+
+public class Charendwith {
+public static void main(String[] args) {
+	String str="suresh raina";
+	boolean a=str.endsWith("na");
+	System.out.println(a);
+}
+}
+
+//Q3
+
+package stringsass;
+
+public class Charindex {
+public static void main(String[] args) {
+	String str="rahul dravid";
+	char a=str.charAt(0);
+	char b=str.charAt(6);
+	System.out.println("the char at given index:"+a);
+	System.out.println("the char at given index:"+b);
+}
+}
+
+//Q4
+
+package stringsass;
+
+import java.util.Scanner;
+
+public class Checkletter {
+public static void main(String[] args) {
+	String str="Ramesh";
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the character you want to search:");
+	char c = sc.next().charAt(0);
+	boolean check=false;
+	for(int i=0;i<str.length();i++) {  
+		if((str.charAt(i))==c) {
+			check=true;
+			break;
+		}
+		 	  
+	}
+	 System.out.println(check);	
+}
+}
+
+
+//Q5
+
+package stringsass;
+
+public class Codepointcount {
+public static void main(String[] args) {
+//	String s="Hello";
+//	int c=s.codePointCount(0,5);
+//	System.out.println(c);
+	String str = "aaaaaaaaaaaaa  sfghjk";
+	System.out.println("Given String : " + str);
+	int c = str.codePointCount(0, 17);
+	System.out.println("Codepoint count : " + c);
+
+}
+}
+
+
+//Q6
+
+package stringsass;
+//Write a program to compare two strings lexicographically Two Strings
+
+public class  Compareignore {
+	public static void main(String[] args)
+	{
+		String str1 = "DJava Exercise";
+		String str2 = "bava Exercise";        
+		System.out.println("String 1 : " + str1);
+		System.out.println("String 2 : " + str2); 
+		int res = str1.compareTo(str2); //str2-str1
+		System.out.println(res);
+		if (res < 0)
+		{
+			System.out.println("String 1" +" is less than " + "String 2");
+		}
+		else if (res == 0)
+		{
+			System.out.println("String 1 "+"is equal to " +"String 2");
+		}
+		else
+		{
+			System.out.println("String 1 "+"is greater than " +"String 2 ");
+		}
+	}
+}
+ 
+
+//Q7
+
+package stringsass;
+
+public class Comparesequence {
+public static void main(String[] args) {
+	String s1="Sathya Prakash";
+	String s2="Computer Education";
+	String cs="Computer Education"; //The contentEquals() method searches a string to find out if it contains the exact same sequence of characters in the specified string or StringBuffer.
+	System.out.println(s1.contentEquals(cs));
+	System.out.println(s2.contentEquals(cs));
+}
+}
+
+//Q8
+
+package stringsass;
+
+public class Compareto {
+public static void main(String[] args) {
+	String s1="bananaB"; //65
+	String s2="bananaC"; //97
+	int res=s1.compareTo(s2); //if s1 contain capital case letter the res is negative
+	System.out.println(res); //its opposite to compareToIgnoreCase() //s1-s2
+	if(res<0) {
+		System.out.println("s1 is les than s2");
+	}
+	else if(res==0) {
+		System.out.println("s1 is equal to s2");
+	}
+	else {
+		System.out.println("s1 is greater than s2");
+	}
+}
+}
+
+//Q9
+
+package stringsass;
+
+public class Compareuplow {
+public static void main(String[] args) {
+	String s="Ramesh is GooD BoY";
+	int uc=0;
+	int lc=0;
+	int oc=0;
+	for(int i=0;i<s.length();i++) {
+		Character c=s.charAt(i);
+		if(Character.isLowerCase(c)) {
+			lc++;
+		}else if(Character.isUpperCase(c)) {
+			uc++;
+		}
+		else {
+			oc++;
+		}
+	}
+	System.out.println("the upper case count: "+uc);
+	System.out.println("the lower case count: "+lc);
+	System.out.println("the other case count: "+oc);
+}
+}
+
+//Q10
+
+package stringsass;
+//Write a program to compare two strings lexicographically Two Strings
+
+public class Comtoo {
+	public static void main(String[] args)
+	{
+		String str1 = "DJava Exercise";
+		String str2 = "bava Exercise";        
+		System.out.println("String 1 : " + str1);
+		System.out.println("String 2 : " + str2); 
+		int res = str1.compareTo(str2); //str2-str1
+		System.out.println(res);
+		if (res < 0)
+		{
+			System.out.println("String 1" +" is less than " + "String 2");
+		}
+		else if (res == 0)
+		{
+			System.out.println("String 1 "+"is equal to " +"String 2");
+		}
+		else
+		{
+			System.out.println("String 1 "+"is greater than " +"String 2 ");
+		}
+	}
+}
+ 
+
+//Q11
+
+package stringsass;
+
+public class Conanical {
+public static void main(String[] args) {
+	String str1 = "Java Exercises";
+	String str2 = new StringBuffer("Java").append(" Exercises").toString();
+	String str3 = str2.intern();
+    
+	//string is mutable stringbuffer is immutable
+	//The .intern() method creates an exact copy of a string located in the heap memory and stores it in the string constant pool. 
+	
+	System.out.println("str1 == str2 ? " + (str1 == str2));
+	System.out.println("str1 == str3 ? " + (str1 == str3));
+}
+}
+
+
+//Q12
+
+package stringsass;
+
+public class Concatstr {
+	public String conCat(String s1,String s2) {
+//		if (s1.length() != 0 && s2.length() != 0)
+//			return s1 + s2.substring(0);
+		return s1 +" "+ s2;
+	}
+public static void main(String[] args) {
+	Concatstr st=new Concatstr();
+	String s1="hello";
+	String s2="world";
+	 
+	System.out.println(st.conCat(s1,s2));
+}
+}
+
+
+//Q13
+
+package stringsass;
+
+public class Contentequals {
+public static void main(String[] args) {
+//	String s1="computer language";
+//	String s2="computer language";
+//	String s33="puter language";
+//	Boolean s3=s1.contentEquals(s33);
+//	Boolean s4=s2.contentEquals(s33);
+//	System.out.println(s3);
+//	System.out.println(s4);
+	String str1 = "Sathya Prakash";
+	String str2 = "Computer Education";
+	CharSequence cs = "Sathya Prakash";
+	System.out.println("Comparing '"+str1+"'"+" and '"+cs+"' : " + str1.contentEquals(cs));
+	System.out.println("Comparing '"+str2+"'"+" and '"+cs+"' :"+ str2.contentEquals(cs));
+}
+}
+
+
+//Q14
+package stringsass;
+
+public class Countwords {
+public static void main(String[] args) {
+	String s="ramesh is a good girl";
+	int cs=0;
+	for(int i=0;i<s.length();i++) {
+		Character c=s.charAt(i);
+		if(c==' ') {
+			cs++;
+		}
+	}
+	System.out.println("the number of wprds in given string: " +(cs+1));
+}
+}
+
+//Q15
+package stringsass;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Createchararray {
+public static void main(String[] args) {
+	String s="ramesh";
+	List<Character> arrlist = new ArrayList<>();
+	for(int i=0;i<s.length();i++) {
+	   arrlist.add(s.charAt(i));
+	}
+		 System.out.println(arrlist);
+	 
+}
+}
+
+
+//Q16
+package stringsass;
+
+import java.util.Scanner;
+
+public class Findwordinstr {
+public static void main(String[] args) {
+	String s="Tutor Joes Computer Education";
+	String[] s1=s.split(" ");
+	Scanner sc=new Scanner(System.in);
+	String find=sc.next();
+	for(int i=0;i<s1.length;i++) {
+		if(s1[i].equals(find)) {
+			System.out.print("the word is found at index:"+(i));
+		}
+	 
+	}
+	 
+}
+}
+
+
+//Q17
+
+package stringsass;
+
+import java.util.Scanner;
+
+public class Maxlenbetwn2strngs {
+public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	System.out.println("enter first string:");
+	String s1=s.nextLine();
+	System.out.println("enter second string:");
+	String s2=s.nextLine();
+	if(s1.length()>s2.length()) {
+		System.out.println(s1+" is Maximum String..");
+	}
+	else if(s1.length()<s2.length()) {
+		System.out.println(s2+" is Maximum String..");
+	}
+	else {
+		System.out.println(s1+" or "+s2+" Both are Same Length");
+	}
+}
+}
+
+
+//Q18
+
+package stringsass;
+
+import java.util.Arrays;
+
+//Write a program to find the maximum occurring character in a string
+public class Maxoccuring {
+	public static void main(String[] args) {
+		 String s="java eaxercisea";
+		 int c=0;
+		 char ch;
+		 int max=0;
+		 char st = '0';
+		    for(int i=0;i<s.length();i++) {
+		    	for(int j=0;j<s.length();j++) {
+		    		 ch=s.charAt(i);
+		    		if(ch==s.charAt(j)) {
+		    			c++;
+		    			if(c>max) {
+		    				st=ch;
+		    			}
+		    		}
+		    	}
+		    }
+		    System.out.println(st);
+	}
+    
+}
+
+//Q19
+package stringsass;
+//Write a program to find first non repeating character in a string
+
+public class Nonrepeating {
+	public static void main(String[] args) {
+		String str = "Java";
+		System.out.println("Given String : " + str);
+		System.out.println("Non Repeated Character in String is :" );
+		for (int i = 0; i < str.length(); i++)
+		{
+			boolean u = true;
+			for (int j = 0; j < str.length(); j++)
+			{
+				if (i!=j && str.charAt(i) == str.charAt(j))
+				{ 
+					System.out.println(i+" "+j);
+					u = false;
+					break;
+				}
+			}
+			if (u)
+			{
+				System.out.println(str.charAt(i));
+			}
+		}
+	}
+}
+
+
+//Q20
+
+package stringsass;
+
+public class Palindrome {
+public static void main(String[] args) {
+	String s="madam";
+	String rev="";
+	for(int i=s.length()-1;i>=0;i--) {
+		char c=s.charAt(i);
+		rev=rev+c;
+		 
+	}
+	if(s.equals(rev)) {
+	System.out.println("palindrome");
+	}
+	else {
+		System.out.println("not palindrome");
+	}
+}
+}
+
+
+//Q21
+
+ 
+//Write a program to print after removing duplicates from a given string
+package stringsass;
+
+public class Removedup {
+    public static void main(String[] args) {
+        String s = "raammeesshh";
+        String s1 = "";
+ 
+        char[] charArray = s.toCharArray();
+        int length = charArray.length;
+ 
+        for (int i = 0; i < length; i++) {
+            boolean isDuplicate = false;
+            for (int j = 0; j < i; j++) {
+            	//System.out.println(i);
+                if (charArray[i] == charArray[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+            	//System.out.println(isDuplicate);
+                s1 += charArray[i];
+            }
+        }
+        System.out.println(s1);
+    }
+}
+ 
+
+//Q22
+
+package stringsass;
+
+public class Repeatinchar {
+public static void main(String[] args) {
+	String s="java";
+	String s1="";
+	for(int i=0;i<s.length();i++) {
+//		for(int j=0;j<2;j++) {
+//			s1+=s.charAt(i);
+//		}		
+		s1+=s.substring(i,i+1)+s.substring(i,i+1);
+	}
+	System.out.println(s1);
+
+}
+}
+
+
+//Q23
+
+package stringsass;
+
+public class Replacechar {
+	public static void main(String[] args)
+	{
+		String str1 = "Java Exercise";		
+		String str2 = str1.replace('e', 'Q');
+ 
+		System.out.println("Given String : " + str1);
+		System.out.println("After String Character Replace : " + str2);
+	}
+}
+
+//Q24
+
+package stringsass;
+
+public class Replacesubstr {
+	public static void main(String[] args)
+	{
+		String str1 = "String and String Function";
+		String str2 = str1.replaceAll("String", "Java");
+		System.out.println("Given String : " + str1);
+		System.out.println("After String Replace : " + str2);
+
+	}
+}
+
+
+//Q25
+
+package stringsass;
+
+public class Reverseeachword {
+public static void main(String[] args) {
+	String s="my name is java";
+	String[] words=s.split(" ");
+	String revstr="";
+	for(int i=0;i<words.length;i++) {
+		String word=words[i];
+		String revword="";
+		for(int j=word.length()-1;j>=0;j--) {
+			revword+=word.charAt(j);
+		}
+		revstr+=revword+" ";
+	}
+	 System.out.print(revstr);
+}
+}
+
+
+//Q26
+
+package stringsass;
+
+public class Revwrdsinstring {
+public static void main(String[] args) {
+	String s="Tutor Joes Computer Education";
+	String[] s1=s.split(" ");
+	String revword="";
+	for(int i=s1.length-1;i>=0;i--) {
+		String word=s1[i];
+		System.out.print(word+" ");
+	}
+}
+}
+
+
+//Q27
+
+package stringsass;
+
+public class Samedata {
+public static void main(String[] args) {
+	String s1="ram is good";
+	String s2="sam is good";
+	String s3="ram is good";
+	System.out.println(s1.equals(s2));
+	System.out.println(s1.equals(s3));
+	System.out.println(s2.equals(s3));
+}
+}
+
+
+//Q28
+package stringsass;
+//Write a program to test if a given string contains the specified sequence of char values
+public class Specdseqofcharval {
+public static void main(String[] args) {
+	String s="Tutor Joes Computer EDucation";
+	String s1="Joes";
+	System.out.print(s.contains(s1));
+}
+}
+
+
+//Q29
+
+package stringsass;
+
+public class Specifidpos {
+public static void main(String[] args) {
+	String s="Tutor Joes Computer Education";
+	String sp=s.substring(6, 11);
+	System.out.println(sp);
+}
+}
+
+
+//Q30
+package stringsass;
+//Write a program to get the length of a given string
+public class Strlen {
+public static void main(String[] args) {
+	String str = "Java Exercise";
+	int len = str.length();
+	System.out.println("Given String : "+str);
+	System.out.println("String Length : "+len);
+}
+}
+
+
+//Q31
+package stringsass;
+
+public class Strstsrts {
+public static void main(String[] args) {
+	String s="rahul dravid";
+	 boolean a=s.startsWith("ra");
+	 System.out.println(a);
+}
+}
+
+
+//Q32
+
+package stringsass;
+//Write a program to compare a given string to the specified string buffer
+
+public class Strwithstbfr {
+public static void main(String[] args) {
+	String s1="Computer Education";
+	String s2="Laptop Education";
+	StringBuffer sb=new StringBuffer(s1);
+	//StringBuffer sb1=new StringBuffer(s2);
+	System.out.println(s1.contentEquals(sb));
+	System.out.print(s2.contentEquals(sb));
+}
+}
+
+//Q33
+package stringsass;
+//sum of digits in string
+public class Sumofdigitsinstr {
+public static void main(String[] args) {
+	String s="aab12mfn45uhdg6";
+	int sum=0;
+	for(int i=0;i<s.length();i++) {		 
+		if(Character.isDigit(s.charAt(i))) {
+			String tmp = s.substring(i,i+1);
+			sum+=Integer.parseInt(tmp);
+		}
+	}
+	System.out.print(sum);
+}
+ 
+}
+
+
+//Q34
+package stringsass;
+
+//swapping two strings
+public class Swapstrns {
+public static void main(String[] args) {
+	String s1="ramesh";
+	String s2="vijay";
+	String s3="";
+	System.out.println("before swapping:"+s1+" "+s2);
+	s3=s1;
+	s1=s2;
+	s2=s3;
+ 
+	System.out.println("after swapping:"+s1+" "+s2);
+}
+}
+
+
+//Q35
+package stringsass;
+
+public class Swapwithouttemp {
+	public static void main(String[] args) {
+	String s1 = "Sathya";
+	String s2 = "Prakash";
+	System.out.println("Before Swap String 1 :"+s1);
+	System.out.println("Before Swap String 2 :"+s2);
+	s1 = s1 + s2;
+	//System.out.println(s1.length());
+	s2 = s1.substring(0, s1.length() - s2.length());
+	//System.out.println(s2.length());
+	s1 = s1.substring(s2.length(),s1.length());
+	System.out.println("After Swap String 1 :"+s1);
+	System.out.println("After Swap String 2 :"+s2);
+	}
+   
+}
+
+
+//Q36
+package stringsass;
+
+public class Trimspace {
+public static void main(String[] args) {
+	String str = "	Computer	";
+	String new_str = str.trim();
+	System.out.println("Given String :" + str);
+	System.out.println("After Trim White Space in String :" + new_str);
+}
+}
+
+
+//Q37
+package stringsass;
+
+//Write a program to get the character (Unicode code point) at the given index within the String
+public class Unicodepointstr {
+public static void main(String[] args) {
+	String str = "Welcome Java";
+	System.out.println("Given String : " + str);
+	int v1 = str.codePointAt(0);
+	int v2 = str.codePointAt(6);
+	System.out.println("Character :"+str.charAt(0)+"\nUnicode Point : " + v1);
+	System.out.println("Character :"+str.charAt(6)+"\nUnicode Point : " + v2);
+}
+}
+
+
+//Q38
+
+package stringsass;
+
+//Write a program to Given string Convert Uppercase to Lowercase
+
+public class UppertoLower {
+public static void main(String[] args) {
+	String s="ComPuter";
+	String s1=s.toLowerCase();
+	System.out.println(s1);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

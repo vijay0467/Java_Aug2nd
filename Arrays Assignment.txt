@@ -1,0 +1,614 @@
+Arrays Assignment:
+
+//Q1
+package dayassignments;
+
+import java.util.Scanner;
+
+//Write a program to array elements print all Negative number
+public class Allneg {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int l=sc.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elemnents arr[%d]:",i);
+		arr[i]=sc.nextInt();
+	}
+	System.out.println("the negative numbers in the array are:");
+	for(int i=0;i<l;i++) {
+		if(arr[i]<0) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+	System.out.println();
+}
+}
+
+//Q2
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Allpos {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int l=sc.nextInt();
+		int arr[]=new int[l];
+		for(int i=0;i<l;i++) {
+			System.out.printf("enter the elemnents arr[%d]:",i);
+			arr[i]=sc.nextInt();
+		}
+		System.out.println("the positive numbers in the array are:");
+		for(int i=0;i<l;i++) {
+			if(arr[i]>0) {
+				System.out.print(arr[i]+" ");
+			}
+		}
+		System.out.println();
+	}
+
+}
+
+//Q3
+
+package dayassignments;
+
+import java.util.Arrays;
+
+public class Ascen {
+	public static void main(String[] args) {
+		int arr[]={2,6,4,3,7,8,1};
+		System.out.println("the org array is:"+Arrays.toString(arr));
+		Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
+		
+	}
+
+}
+
+//Q4
+
+package dayassignments;
+
+public class Avg {
+public static void main(String[] args) {
+	int arr[]= {2,3,4,2,5,6,8};
+	int sum=0;
+	int res=0;
+	for(int i=0;i<arr.length;i++) {
+		sum+=arr[i];
+		res=sum / arr.length ;
+		
+	}
+	System.out.println(res);
+}
+}
+
+//Q5
+
+package dayassignments;
+
+public class Copy {
+  public static void main(String[] args) {
+	int ar[]= {1,2,3,4,5,6};
+	int ar1[]=new int[10];
+	for(int i=0;i<ar.length;i++) {
+		 ar1[i]+=ar[i];
+		// System.out.print(ar1[i]);
+	}
+	//System.out.println(ar);
+	for(int i=0;i<ar.length;i++) {
+	System.out.print(ar1[i]+" ");
+	}
+	System.out.println();
+}
+}
+
+//Q6
+
+package dayassignments;
+import java.util.Scanner;
+public class Cubic 
+  {
+ 
+public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	int l=input.nextInt();
+ 
+	int ar[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("Element of a[%d] :",i);
+		ar[i]=input.nextInt();
+	}
+	for(int i=0;i<l;i++) {
+		System.out.print(ar[i]+" ");
+		int res=ar[i]*ar[i]*ar[i];
+		System.out.println(res);
+	}
+ 
+}
+}
+
+
+//Q7
+
+package dayassignments;
+import java.util.Arrays;
+import java.util.Collections;
+
+
+public class Des {
+public static void main(String[] args) {
+	Integer arr[] = { 23, 5, 67, 20, 3, 30, 79, 3, 70, 2 };
+	System.out.println("Original Array : " + Arrays.toString(arr));
+	Arrays.sort(arr, Collections.reverseOrder());
+	System.out.println("Sorted Array : " + Arrays.toString(arr));
+
+}
+}
+
+//Q8
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Disarray {
+public static void main(String[] args) {
+	Scanner input=new Scanner(System.in);
+	int l=input.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elements arr[%d] ",i);
+		arr[i]=input.nextInt();
+	}
+	System.out.println("display the array elements");
+	for(int i=0;i<l;i++) {
+		System.out.print(arr[i]+" ");
+	}
+	
+}
+}
+
+//Q9
+
+package dayassignments;
+
+public class Dupel {
+	public static void main(String[] args) {
+	 int arr[]={1,2,2,3,4,4,5,6,6,7,7};
+	    int len=arr.length;
+	    int temp[]=new int[20];
+	    int j=0;
+	    for(int i=0;i<len-1;i++){
+	    	if(arr[i]!=arr[i+1]){
+	    		temp[j++]=arr[i];
+	    		 
+	    	}
+	    }
+	    temp[j++]=arr[len-1];
+	    for(int k=0;k<j;k++){
+	    	System.out.print(temp[k]+" "); 
+	    }
+}
+}
+
+//Q10
+
+package dayassignments;
+
+import java.util.Scanner;
+
+//Write a program to array elements print all Even number
+public class Even {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int l=sc.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elements arr[%d]: ",i);
+		arr[i]=sc.nextInt();
+	}
+	System.out.println("the original array");
+	for(int i=0;i<l;i++) {
+	System.out.print(arr[i]+" ");
+	}
+	System.out.println();
+	for(int i=0;i<l;i++) {
+		if(arr[i]%2 == 0) {
+			System.out.println("the even elements are:" +arr[i]);
+		}
+	}
+}
+}
+
+
+//Q11
+
+package dayassignments;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Maxmin {
+public static void main(String[] args) {
+	Scanner scn=new Scanner(System.in);
+	int l=scn.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the element arr[%d]: ",i);
+		arr[i]=scn.nextInt();
+	}
+	System.out.println("the original array");
+	for(int i=0;i<l;i++) {
+		System.out.print(arr[i]+" ");
+	}
+	System.out.println();
+	Arrays.sort(arr);
+	System.out.println("the sorted array");
+	for(int i=0;i<l;i++) {
+		System.out.print(arr[i]+" ");
+	}
+	System.out.println();
+	//for(int i=0;i<l;i++) {
+		System.out.println("maxele: "+arr[l-1]);
+		System.out.println("minele: "+arr[0]);
+	//}
+	System.out.println();
+}
+}
+
+//Q12
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Mergearr {
+	public static void main(String[] args)
+	{   
+		Scanner input =new Scanner(System.in);
+		System.out.print("Enter the First Array Limit :");
+		int n =input.nextInt();
+		System.out.print("Enter the Second Array Limit :");
+		int m =input.nextInt();
+		int [] a =new int[n];
+		int [] b =new int[m];
+		int [] c =new int[100];
+		int k=0;
+		for(int i=0;i<n;i++)
+		{
+			System.out.printf("Element of a[%d] :",i);
+			a[i]=input.nextInt();
+		}
+		for(int i=0;i<m;i++)
+		{
+			System.out.printf("Element of b[%d] :",i);
+			b[i]=input.nextInt();
+		}
+		for(int i=0;i<n;i++)
+		{
+			c[k] = a[i];
+			k++;
+		}
+		for(int i=0;i<m;i++)
+		{
+			c[k] = b[i];
+			k++;
+		}
+		System.out.print("\nMerge two Array Elements ...\n");	
+		for(int i=0;i<k;i++)
+		{
+			//System.out.printf("\nc[%d] =%d",i,c[i]);
+			System.out.print(c[i]+" ");
+		}
+    }
+
+}
+ 
+ 
+
+//Q13
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Odd {
+ public static void main(String[] args) {
+		Scanner scnr=new Scanner(System.in);
+		int l=scnr.nextInt();
+		int arr[]=new int[l];
+		for(int i=0;i<l;i++) {
+			System.out.printf("enter the elements arr[%d]: ",i);
+			arr[i]=scnr.nextInt();
+		}
+		System.out.println("the original array");
+		for(int i=0;i<l;i++) {
+		System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		for(int i=0;i<l;i++) {
+			if(arr[i]%2 != 0) {
+				System.out.println("the odd elements are:" +arr[i]);
+			}
+		}
+}
+}
+
+
+//Q14
+
+package dayassignments;
+import java.util.Arrays;
+public class Reverse {
+ public static void main(String[] args) {
+	 int arr[] = {1, 2, 3, 4, 5, 6};
+     int rev[] = new int[arr.length];
+	for(int i=arr.length-1;i>=0;i--) {
+		  System.out.print(arr[i]+" ");
+	}
+	 System.out.println();
+	 
+	
+	
+}
+}
+
+//Q15
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Sam {
+ 
+
+	//Write a program to copy the elements of one array into another array
+	 
+		public static void main(String[] args)
+		{   
+			Scanner input =new Scanner(System.in);
+			System.out.print("Enter the Array Limit :");
+			int l =input.nextInt();
+			int [] a =new int[l];
+			int [] c =new int[l];
+			for(int i=0;i<l;i++)
+			{
+				System.out.printf("Element of a[%d] :",i);
+				a[i]=input.nextInt();
+			}
+			for(int i=0;i<l;i++)
+			{
+				c[i] = a[i];
+			}
+			System.out.print("\nOriginal Array Elements...");	
+			for(int i=0;i<l;i++)
+			{
+				System.out.printf("\na[%d] = %d",i,a[i]);
+			}
+			System.out.print("\n\nCopy Array Elements one to Another Array...");	
+			for(int i=0;i<l;i++)
+			{
+				System.out.printf("\nc[%d] = %d",i,c[i]);
+			}
+		}
+}
+ 
+
+//Q16
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Search {
+public static void main(String[] args) {
+	Scanner input=new Scanner(System.in);
+	System.out.println("enter the array length");
+	int len=input.nextInt();
+	int arr[]=new int[len];
+	for(int i=0;i<len;i++) {
+		System.out.printf("enter the elements arr[%d]: ",i);
+		arr[i]=input.nextInt();
+	}
+	int fact = 0;
+	int i;
+	System.out.println("enter the element you want to search: ");
+	int srch=input.nextInt();
+	for( i=0;i<len;i++) {
+		if(srch==arr[i]) {
+			 fact=1;
+			 break;
+		}
+	}
+	if(fact==1) {
+		System.out.printf("the element is found at position: %d",i+1);
+		System.out.printf("\nThe Element is found in the index : %d", i);
+	}
+	else {
+		System.out.println("the element is not found");
+	}
+}
+}
+
+//Q17
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Secondsmallest {
+public static void main(String[] args) {
+	Scanner input=new Scanner(System.in);
+	int l=input.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the element arr[%d]: ",i);
+		arr[i]=input.nextInt();
+	}
+	int temp;
+	for(int i=0;i<l;i++) {
+		for(int j=i+1;j<l;j++) {
+			if(arr[i]>arr[j]) {
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+		}
+	}
+	System.out.printf("the second highest element is: "+arr[1]);
+}
+}
+
+//Q18
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Storele {
+	 
+ 
+
+	//Write a program to store elements in an array and print it
+	 
+		public static void main(String[] args)
+		{   
+			Scanner input =new Scanner(System.in);
+			int [] a =new int[7]; 
+			for(int i=0;i<7;i++)
+			{
+				System.out.printf("Element of a[%d] :",i);
+				a[i]=input.nextInt();
+			} 
+			System.out.println("\nDisplay Array Elements...\n");
+			for(int e:a)
+			{
+				System.out.print(e+" ");
+			}
+	   
+	}
+
+}
+
+
+//Q19
+
+package dayassignments;
+
+public class Sumeven {
+public static void main(String[] args) {
+     int arr[]= {1,2,3,4,5,6,7,8};
+     int sum=0;
+     for(int i=0;i<arr.length;i++) {
+    	 if(arr[i]%2 == 0) {
+    		 sum+=arr[i];
+    	 }
+     }
+     System.out.println("the sum of even numbers is: "+sum);
+}
+}
+
+
+//Q20
+
+package dayassignments;
+
+public class Sumodd {
+public static void main(String[] args) {
+	  int arr[]= {1,2,3,4,5,6,7,8};
+	     int sum=0;
+	     for(int i=0;i<arr.length;i++) {
+	    	 if(arr[i]%2 != 0) {
+	    		 sum+=arr[i];
+	    	 }
+	     }
+	     System.out.println("the sum of odd numbers is: "+sum);
+}
+}
+
+//Q21
+package dayassignments;
+
+import java.util.Scanner;
+
+public class SumOfCubic {
+public static void main(String[] args) {
+	Scanner input=new Scanner(System.in);
+	int l=input.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the array elements arr[%d] ",i);
+		arr[i]=input.nextInt();
+	}
+	int cubic=0;
+	for(int e:arr) {
+		cubic+=(e*e*e);
+		System.out.print(cubic);
+		
+	}
+	System.out.print("Sum of Cubic Array Elements : "+cubic);
+	 
+}
+}
+
+//Q22
+
+package dayassignments;
+
+//Write a program to array elements to print sum of Negative Numbers
+public class Sumofneg {
+public static void main(String[] args) {
+	int arr[]= {-1,2,-4,5,-6,7,5};
+	int sum=0;
+	for(int i=0;i<arr.length;i++) {
+		if(arr[i]<0) {
+			sum+=arr[i];
+		}
+	}
+	System.out.println("the sum of negative numbers is: "+sum);
+}
+}
+
+//Q23
+
+package dayassignments;
+
+public class Sumofpos {
+public static void main(String[] args) {
+	int arr[]= {-1,2,-4,5,-6,7,5};
+	int sum=0;
+	for(int i=0;i<arr.length;i++) {
+		if(arr[i]>0) {
+			sum+=arr[i];
+		}
+	}
+	System.out.println("the sum of positive numbers is: "+sum);
+}
+}
+
+//Q24
+
+package dayassignments;
+
+public class Uniqueele {
+public static void main(String[] args) {
+	 int arr[]={1,2,2,3,4,4,5,6,6,7,7};
+	    int len=arr.length;
+	    int temp[]=new int[20];
+	    int j=0;
+	    for(int i=0;i<len-1;i++){
+	    	if(arr[i]!=arr[i+1]){
+	    		temp[j++]=arr[i];
+	    		 
+	    	}
+	    }
+	    temp[j++]=arr[len-1];
+	    for(int k=0;k<j;k++){
+	    	System.out.print(temp[k]+" "); 
+	    }
+}
+}
+
+ 

@@ -1,0 +1,457 @@
+Arrays And String Coding Test
+
+//program1:Answer
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Sam {
+	 
+		public static void main(String[] args)
+		{   
+			Scanner input =new Scanner(System.in);
+			System.out.print("Enter the length of array :");
+			int l =input.nextInt();
+			int [] or =new int[l];
+			int [] cd =new int[l];
+			for(int i=0;i<l;i++)
+			{
+				System.out.printf("Element of or[%d] :",i);
+				or[i]=input.nextInt();
+			}
+			for(int i=0;i<l;i++)
+			{
+				cd[i] = or[i];
+			}
+			System.out.print("\nOriginal Array Elements...");	
+			for(int i=0;i<l;i++)
+			{
+				System.out.printf("\nor[%d] = %d",i,or[i]);
+			}
+			System.out.print("\n\nCopy Array Elements one to Another Array...");	
+			for(int i=0;i<l;i++)
+			{
+				System.out.printf("\ncd[%d] = %d",i,cd[i]);
+			}
+		}
+}
+ 
+//program2:Answer
+
+package javaexamarrndstr;
+
+import java.util.Scanner;
+
+public class Printeveneleinarr {
+    public static void main(String[] args) {
+    	Scanner sc=new Scanner(System.in);
+    	System.out.println("Enter the length of array");
+    	int l=sc.nextInt();
+    	int arr[]=new int[l];
+    	for(int i=0;i<l;i++) {
+    		System.out.printf("enter the elements arr[%d]: ",i);
+    		arr[i]=sc.nextInt();
+    	}
+    	System.out.println("the original array");
+    	for(int i=0;i<l;i++) {
+    	System.out.print(arr[i]+" ");
+    	}
+    	System.out.println();
+    	for(int i=0;i<l;i++) {
+    		if(arr[i]%2 == 0) {
+    			System.out.println("the even elements are:" +arr[i]);
+    		}
+    	}
+ }
+}
+
+//Program3:Answer
+
+package javaexamarrndstr;
+
+import java.util.Scanner;
+
+public class Printalloddeleinarr {
+	 public static void main(String[] args) {
+	    	Scanner sc=new Scanner(System.in);
+	    	System.out.println("Enter the length of array");
+	    	int l=sc.nextInt();
+	    	int arr[]=new int[l];
+	    	for(int i=0;i<l;i++) {
+	    		System.out.printf("enter the elements arr[%d]: ",i);
+	    		arr[i]=sc.nextInt();
+	    	}
+	    	System.out.println("the original array");
+	    	for(int i=0;i<l;i++) {
+	    	System.out.print(arr[i]+" ");
+	    	}
+	    	System.out.println();
+	    	for(int i=0;i<l;i++) {
+	    		if(arr[i]%2 != 0) {
+	    			System.out.println("the odd elements are:" +arr[i]);
+	    		}
+	    	}
+}
+}
+
+//Program4:Answer
+
+package javaexamarrndstr;
+
+import java.util.Scanner;
+
+public class Searcheleinarr {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the length of array");
+	int l=sc.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elements arr[%d]: ",i);
+		arr[i]=sc.nextInt();
+	}
+	int fact=0;
+	int i;
+	int search=sc.nextInt();
+	for(i=0;i<l;i++) {
+		if(search==arr[i]) {
+			fact=1;
+			break;
+			
+		}
+	}
+	if(fact==1) {
+		System.out.print("the element is found");
+	}
+	else {
+		System.out.print("the element is not found");
+	}
+}
+}
+
+
+//Program5:Answer
+
+package javaexamarrndstr;
+
+import java.util.Scanner;
+
+public class Sumofnegeleinarr {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the length of array");
+	int l=sc.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elements arr[%d]: ",i);
+		arr[i]=sc.nextInt();
+	}
+	int sum=0;
+	for(int i=0;i<l;i++) {
+		if(arr[i]<0) {
+			sum+=arr[i];
+		}
+	}
+	System.out.println("the sum of negative elements in array is: "+sum);
+}
+}
+
+
+//Program6:Answer
+
+package javaexamarrndstr;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Uniqueeleinarra {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the length of array");
+	int l=sc.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elements arr[%d]: ",i);
+		arr[i]=sc.nextInt();
+	}
+	Set<Integer>st=new HashSet();
+    for(int i=0;i<l;i++) {
+    	st.add(arr[i]);
+    }
+    for(int e:st) {
+    System.out.print(e+" ");
+    }
+}
+}
+
+
+//Program7:Answer
+
+
+package javaexamarrndstr;
+
+import java.util.Scanner;
+
+public class Printposeleinarr {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int l=sc.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elemnents arr[%d]:",i);
+		arr[i]=sc.nextInt();
+	}
+	System.out.println("the positive numbers in the array are:");
+	for(int i=0;i<l;i++) {
+		if(arr[i]>0) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+	System.out.println();
+}
+}
+
+
+//Program8:Answer
+
+package javaexamarrndstr;
+
+import java.util.Scanner;
+
+public class Avgofeleinarr {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int l=sc.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elemnents arr[%d]:",i);
+		arr[i]=sc.nextInt();
+	}
+	int sum=0;
+	int avg=0;
+	for(int i=0;i<l;i++) {
+		sum+=arr[i];	 
+		
+	}
+	avg=sum / arr.length ;
+	System.out.println(avg);
+}
+}
+
+
+//Program9:Answer
+
+package javaexamarrndstr;
+
+import java.util.Scanner;
+
+public class Sumofalleleinarr {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int l=sc.nextInt();
+	int arr[]=new int[l];
+	for(int i=0;i<l;i++) {
+		System.out.printf("enter the elemnents arr[%d]:",i);
+		arr[i]=sc.nextInt();
+	}
+	int sum=0;
+	for(int i=0;i<l;i++) {
+		sum+=arr[i];
+	}
+	System.out.println(sum);
+}
+}
+
+
+//Program10:Answer
+
+package javaexamarrndstr;
+
+import java.util.Scanner;
+
+public class Mergetwoarr {
+	public static void main(String[] args)
+	{   
+		Scanner input =new Scanner(System.in);
+		System.out.print("Enter the length of first array :");
+		int n =input.nextInt();
+		System.out.print("Enter the length of second array :");
+		int m =input.nextInt();
+		int [] a =new int[n];
+		int [] b =new int[m];
+		int [] c =new int[n+m];
+		int k=0;
+		for(int i=0;i<n;i++)
+		{
+			System.out.printf("Element of a[%d] :",i);
+			a[i]=input.nextInt();
+		}
+		for(int i=0;i<m;i++)
+		{
+			System.out.printf("Element of b[%d] :",i);
+			b[i]=input.nextInt();
+		}
+		for(int i=0;i<n;i++)
+		{
+			c[k++] = a[i];
+		}
+		for(int i=0;i<m;i++)
+		{
+			c[k++] = b[i];
+		}
+		System.out.print("\n The array after merging \n");	
+		for(int i=0;i<(n+m);i++)
+		{
+			System.out.print(c[i]+" ");
+		}
+    }
+
+}
+
+
+//Program11:Answer
+
+package stringsass;
+
+public class Conanical {
+public static void main(String[] args) {
+	String str1 = "Java Application";
+	String str2 = new StringBuffer("Java").append(" Application").toString();
+	String str3 = str2.intern();
+	
+	System.out.println("str1 == str2 ? " + (str1 == str2));
+	System.out.println("str1 == str3 ? " + (str1 == str3));
+}
+}
+
+
+//Program12:Answer
+
+package stringsass;
+
+public class Contentequals {
+public static void main(String[] args) {
+	String s1="computer language";
+	String s2="Computer language";
+	String s33="computer language";
+	Boolean s3=s1.contentEquals(s33);
+	Boolean s4=s2.contentEquals(s33);
+	System.out.println(s3);
+	System.out.println(s4);
+ 
+}
+}
+
+
+//Program13:Answer
+
+package stringsass;
+
+public class Samedata {
+public static void main(String[] args) {
+	String s1="ram is good";
+	String s2="sam is good";
+	String s3="ram is good";
+	System.out.println(s1.equals(s2));
+	System.out.println(s1.equals(s3));
+	System.out.println(s2.equals(s3));
+}
+}
+
+
+//Program14:Answer
+
+package stringsass;
+
+public class Codepointcount {
+public static void main(String[] args) {
+	String str = "aaaaaaaaaaaaa  sfghjk";
+	System.out.println("Given String : " + str);
+	int c = str.codePointCount(0, 17);
+	System.out.println("Codepoint count : " + c);
+
+}
+}
+
+//Program15:Answer
+package stringsass;
+
+public class Comparesequence {
+public static void main(String[] args) {
+	String s1="Pawan Kalyan";
+	String s2="Computer Education";
+	String cs="Computer Education"; 
+	System.out.println(s1.contentEquals(cs));
+	System.out.println(s2.contentEquals(cs));
+}
+}
+
+//Program16:Answer
+
+package stringsass;
+
+public class Concatstr {
+	public String conCat(String s1,String s2) {
+		return s1 +" "+ s2;
+	}
+public static void main(String[] args) {
+	Concatstr st=new Concatstr();
+	String s1="hello";
+	String s2="world";
+	 
+	System.out.println(st.conCat(s1,s2));
+}
+}
+
+//Program17:Answer
+
+package stringsass;
+
+public class Contentequals {
+public static void main(String[] args) {
+	String s1="computer language";
+	String s2="Computer language";
+	String s33="computer language";
+	Boolean s3=s1.contentEquals(s33);
+	Boolean s4=s2.contentEquals(s33);
+	System.out.println(s3);
+	System.out.println(s4);
+ 
+}
+}
+
+
+//Program19:Answer
+package stringsass;
+
+import java.util.Scanner;
+
+public class Maxlenbetwn2strngs {
+public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	System.out.println("enter first string:");
+	String s1=s.nextLine();
+	System.out.println("enter second string:");
+	String s2=s.nextLine();
+	if(s1.length()>s2.length()) {
+		System.out.println(s1+" is Maximum String..");
+	}
+	else if(s1.length()<s2.length()) {
+		System.out.println(s2+" is Maximum String..");
+	}
+	else {
+		System.out.println(s1+" or "+s2+" Both are Same Length");
+	}
+}
+}
+
+ 
+
+
+
+
+
+
+

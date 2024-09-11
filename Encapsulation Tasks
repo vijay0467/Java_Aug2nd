@@ -1,0 +1,576 @@
+Encapsulation Tasks:
+
+//Q1
+package encapsulation.c;
+class Persond{
+	private String name;
+	private int age;
+	private String email;
+	public Persond(String name,int age,String email) {
+		this.name=name;
+		this.age=age;
+		this.email=email;
+	}
+	public String getName() {
+		return name;
+	}
+	public void  setName(String name) {
+		this.name=name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void  setAge(int age) {
+		this.age=age;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void  setEmail(String email) {
+		this.email=email;
+	}
+	public void display() {
+		System.out.println("name: "+name+" "+"\nage: "+age+" "+"\nemail: "+email);
+	}
+}
+public class Gettersetterex {
+public static void main(String[] args) {
+	Persond ps=new Persond("vijay", 20, "vijayreddypatel802@gmail.com");
+	ps.setAge(14);
+	ps.setEmail("malipatel@gmail.com");
+	ps.setName("ajay");
+	System.out.println(ps.getAge());
+	System.out.println(ps.getName());
+	System.out.println(ps.getEmail());
+	ps.display();
+	
+}
+}
+
+
+//Q2
+
+package encapsulation.c;
+
+public class Main {
+    // Public fields
+    public String name;
+    public int age;
+    public String email;
+    
+    public static void main(String[] args) {
+        // Create an instance of the Main class
+        Main person = new Main();
+        
+        // Set the fields directly
+        person.name = "John Doe";
+        person.age = 30;
+        person.email = "john.doe@example.com";
+        
+        // Retrieve and display the values directly
+        System.out.println("Name: " + person.name);
+        System.out.println("Age: " + person.age);
+        System.out.println("Email: " + person.email);
+    }
+}
+
+
+//Q3
+
+package encapsulation.c;
+
+public class Encapsule {
+       private int empid;
+       private int age;
+       private String name;
+       private int salary;
+       private String address;
+       public Encapsule(int empid,int age,String name,int salary,String address) {
+    	   super();
+    	   this.empid=empid;
+    	   this.age=age;
+    	   this.name=name;
+    	   this.age=age;
+    	   this.address=address;
+       }
+	public int getEmpid() {
+		return empid;
+	}
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public Encapsule() {
+		
+	}
+	@Override
+	public String toString() {
+		return "Encapsule [empid=" + empid + ", age=" + age + ", name=" + name + ", salary=" + salary + ", address="
+				+ address + ", getEmpid()=" + getEmpid() + ", getAge()=" + getAge() + ", getName()=" + getName()
+				+ ", getSalary()=" + getSalary() + ", getAddress()=" + getAddress() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+       
+}
+
+//Q4
+
+package encapsulation.c;
+
+class  Email {
+	int age;
+	String email;
+	public void setAge(int age) {
+		if(age>0 && age<120) {
+		this.age=age;
+		}
+		else {
+			throw new ArithmeticException("enter a valid age : "+age);
+		}
+	}
+	public void setEmail(String email) {
+		if(email!=null && email.contains("@")) {
+		this.email=email;
+		}
+		else {
+			throw new IllegalArgumentException("enter a valid email : "+email);
+		}
+	}
+	public void display() {
+		System.out.println("age: "+age+" , "+"email: "+email);
+	}
+}
+public class Emailvalid{
+public static void main(String[] args) {
+	Email ev=new Email();
+	ev.setAge(20);
+	ev.setEmail("vijay@gmail.com");
+	ev.display();
+	
+}	
+}
+
+//Q6
+
+package encapsulation.c;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Course {
+    private String cname;
+    private String instructor;
+
+    public Course(String cname, String instructor) {
+        this.setCname(cname);
+        this.instructor = instructor;
+    }
+
+    
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        if (cname != null && !cname.trim().isEmpty()) {
+            this.cname = cname;
+        } else {
+            System.out.println("Invalid course name: " + cname);
+        }
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(String instructor) {
+        if (instructor != null && !instructor.trim().isEmpty()) {
+            this.instructor = instructor;
+        } else {
+            System.out.println("Invalid instructor name: " + instructor);
+        }
+    }
+    public void display() {
+        System.out.println("Course name: " + cname + " , Instructor: " + instructor);
+    }
+
+}
+
+class Student {
+    private String stname;
+    private List<Course> courses;
+
+    public Student(String stname) {
+        this.stname = stname;
+        this.courses = new ArrayList<>();
+    }
+
+    public void display() {
+        System.out.println("Student name: " + stname);
+        System.out.println("Courses enrolled:");
+        for (Course course : courses) {
+            course.display();
+        }
+    }
+
+    public void add(Course course) {
+        if (course != null) {
+            courses.add(course);
+            System.out.println("Added course: " + course.getCname());
+        } else {
+            System.out.println("Cannot add null course.");
+        }
+    }
+
+    public void remove(Course course) {
+        if (courses.remove(course)) {
+            System.out.println("Removed course: " + course.getCname());
+        } else {
+            System.out.println("Course not found: " + (course != null ? course.getCname() : "null"));
+        }
+    }
+
+    public String getStname() {
+        return stname;
+    }
+
+    public void setStname(String stname) {
+        if (stname != null && !stname.trim().isEmpty()) {
+            this.stname = stname;
+        } else {
+            System.out.println("Invalid student name: " + stname);
+        }
+    }
+}
+
+public class CourseClass {
+    public static void main(String[] args) {
+        Course course1 = new Course("BTech", "Nagaraj");
+        Course course2 = new Course("MSc", "Dr. Smith");
+
+        Student st = new Student("Rahul");
+        st.display();
+
+        st.add(course1);
+        st.add(course2);
+        st.display();
+
+        st.remove(course1);
+        st.display();
+    }
+}
+
+
+
+
+
+
+
+
+
+//Q7
+
+package encapsulation.c;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Course {
+    private String cname;
+    private String instructor;
+
+    public Course(String cname, String instructor) {
+        this.setCname(cname);
+        this.instructor = instructor;
+    }
+
+    
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        if (cname != null && !cname.trim().isEmpty()) {
+            this.cname = cname;
+        } else {
+            System.out.println("Invalid course name: " + cname);
+        }
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(String instructor) {
+        if (instructor != null && !instructor.trim().isEmpty()) {
+            this.instructor = instructor;
+        } else {
+            System.out.println("Invalid instructor name: " + instructor);
+        }
+    }
+    public void display() {
+        System.out.println("Course name: " + cname + " , Instructor: " + instructor);
+    }
+
+}
+
+class Student {
+    private String stname;
+    private List<Course> courses;
+
+    public Student(String stname) {
+        this.stname = stname;
+        this.courses = new ArrayList<>();
+    }
+
+    public void display() {
+        System.out.println("Student name: " + stname);
+        System.out.println("Courses enrolled:");
+        for (Course course : courses) {
+            course.display();
+        }
+    }
+
+    public void add(Course course) {
+        if (course != null) {
+            courses.add(course);
+            System.out.println("Added course: " + course.getCname());
+        } else {
+            System.out.println("Cannot add null course.");
+        }
+    }
+
+    public void remove(Course course) {
+        if (courses.remove(course)) {
+            System.out.println("Removed course: " + course.getCname());
+        } else {
+            System.out.println("Course not found: " + (course != null ? course.getCname() : "null"));
+        }
+    }
+
+    public String getStname() {
+        return stname;
+    }
+
+    public void setStname(String stname) {
+        if (stname != null && !stname.trim().isEmpty()) {
+            this.stname = stname;
+        } else {
+            System.out.println("Invalid student name: " + stname);
+        }
+    }
+}
+
+public class CourseClass {
+    public static void main(String[] args) {
+        Course course1 = new Course("BTech", "Nagaraj");
+        Course course2 = new Course("MSc", "Dr. Smith");
+
+        Student st = new Student("Rahul");
+        st.display();
+
+        st.add(course1);
+        st.add(course2);
+        st.display();
+
+        st.remove(course1);
+        st.display();
+    }
+}
+
+
+//Q8
+
+package encapsulation.c;
+
+public class Courseex8 {
+    public static void main(String[] args) {
+       
+        Course course1 = new Course("Java Programming", "Dr. Smith");
+        Course course2 = new Course("Data Structures", "Prof. Johnson");
+        Course course3 = new Course("Operating Systems", "Dr. White");
+
+      
+        Student student = new Student("Alice");
+
+        
+        student.add(course1);
+        student.add(course2);
+        student.add(course3);
+ 
+        System.out.println("After enrolling in courses:");
+        student.display();
+
+     
+        student.remove(course2);
+
+         
+        System.out.println("\nAfter removing a course:");
+        student.display();
+    }
+}
+
+
+//Q9
+
+package encapsulation.c;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Book{
+	private String btitle;
+	private String bauthor;
+	private String isbn;
+	public Book(String btitle,String bauthor,String isbn) {
+		this.btitle=btitle;
+		this.bauthor=bauthor;
+		this.isbn=isbn;
+	}
+    public void setCname(String btitle) {
+        if (btitle != null && !btitle.trim().isEmpty()) {
+            this.btitle = btitle;
+        } else {
+            System.out.println("Invalid course name: " + btitle);
+        }
+    }
+    public String getBtitle() {
+    	return btitle;
+    }
+    public void setCauthor(String bauthor ) {
+        if (bauthor != null && !bauthor.trim().isEmpty()) {
+            this.bauthor = bauthor;
+        } else {
+            System.out.println("Invalid author name: " + bauthor);
+        }
+    }
+    public String getBauthor() {
+    	return bauthor;
+    }
+    public void setCisbn(String isbn) {
+        if (isbn != null && !isbn.trim().isEmpty()) {
+            this.isbn = isbn;
+        } else {
+            System.out.println("Invalid isbn number: " + isbn);
+        }
+    }
+    public String getBisbn() {
+    	return isbn;
+    }
+    public void display() {
+    	System.out.println("btitle is:"+btitle+" , "+"bauthor is: "+bauthor+" , "+"isbn of book is "+isbn);
+    }
+}
+class Library{
+	private List<Book>books;
+	public Library() {
+        this.books = new ArrayList<>();
+    }
+ 
+	public void add(Book book) {
+		if(book!=null) {
+			books.add(book);
+			System.out.println("Added Book is: "+book.getBtitle());
+		}
+		else {
+			System.out.println("invalid book title");
+		}
+	}
+	public void remove(String isbn) {
+		Book bookToRemove = null;
+        for (Book book : books) {
+            if (book.getBisbn().equals(isbn)) {
+                bookToRemove = book;
+                break;
+            }
+        }
+        if (bookToRemove != null) {
+            books.remove(bookToRemove);
+            System.out.println("Removed Book: " + bookToRemove.getBtitle());
+        } else {
+            System.out.println("Book with ISBN " + isbn + " not found.");
+        }
+	}
+	public void display() {
+		if (books.isEmpty()) {
+            System.out.println("The library is empty.");
+        } else {
+            for (Book book : books) {
+                book.display();
+            }
+        }
+	}
+	 
+	
+}
+public class Encapex9 {
+	public static void main(String[] args) {
+		Book b1=new Book("sanskrit", "ramesh", "3456789");
+		Book b2=new Book("mahabharath", "vijay", "987654");
+		//b1.display();
+		Library l=new Library();
+		l.add(b1);
+		l.add(b2);
+		l.remove("34567");
+		l.display();
+	}
+
+}
+
+
+//Q10
+
+package encapsulation.c;
+
+public class Compex10 {
+public static void main(String[] args) {
+	Book book1 = new Book("To Kill a Mockingbird", "Harper Lee", "45678");
+    Book book2 = new Book("1984", "George Orwell","98765");
+    Book book3 = new Book("The Great Gatsby", "F. Scott Fitzgerald","456789");
+
+    // Creating a Library instance
+    Library library = new Library();
+
+    // Adding books to the library
+    library.add(book1);
+    library.add(book2);
+    library.add(book3);
+
+    // Displaying the library's collection
+    System.out.println("Initial library collection:");
+    library.display();
+
+    // Removing a book from the library
+    library.remove("98765");
+    library.remove("45678");
+    library.remove("456789");
+
+    // Displaying the library's collection after removal
+    System.out.println("\nLibrary collection after removing a book:");
+    library.display();
+}
+}
+

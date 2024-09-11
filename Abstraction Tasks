@@ -1,0 +1,584 @@
+Abstraction Tasks:
+
+//Q1
+package Abstractiontask.com;
+abstract class Shape{
+	abstract void calculateArea();
+}
+class Circle extends Shape{
+	int radius;
+    public Circle(int radius) {
+    	this.radius=radius;
+    }
+	@Override
+	void calculateArea() {
+		 System.out.println("Area of circle is: "+Math.PI*radius*radius);
+		
+	}	
+}
+class Rectangle extends Shape{
+	int length;
+	int width;
+    public Rectangle(int length,int width) {
+    	this.length=length;
+    	this.width=width;
+    }
+	@Override
+	void calculateArea() {
+		 System.out.println("Area of rectangle is: "+(length*width));
+		
+	}
+	
+}
+public class Abstractex1 {
+public static void main(String[] args) {
+	Circle c=new Circle(5);
+	Rectangle r=new Rectangle(3,4);
+	c.calculateArea();
+	r.calculateArea();
+}
+}
+
+//Q2
+
+package Abstractiontask.com;
+interface  Drawable{
+	abstract void draw();
+}
+class CircleArea implements Drawable{
+	int radius;
+    public CircleArea(int radius) {
+    	this.radius=radius;
+    }
+	@Override
+	public void draw() {
+		 
+		System.out.println("Area of circle is: "+Math.PI*radius*radius);
+	}
+	 	
+}
+class RectangleArea implements Drawable{
+	int length;
+	int width;
+    public RectangleArea(int length,int width) {
+    	this.length=length;
+    	this.width=width;
+    }
+	@Override
+	public void draw() {
+		 System.out.println("Area of rectangle is: "+(length*width));
+		
+	}
+	
+}
+public class Interfex2 {
+public static void main(String[] args) {
+	CircleArea c=new CircleArea(5);
+	RectangleArea r=new RectangleArea(3,4);
+	c.draw();
+	r.draw();
+}
+}
+
+
+//Q3
+
+package Abstractiontask.com;
+abstract class Animal{
+	String name;
+	String sound;
+	public Animal(String name,String sound) {
+		this.name=name;
+		this.sound=sound;
+	}
+	public abstract void makesound();
+}
+class Dog extends Animal{
+	   public Dog(String name) {
+	        super(name, "Bark");
+	    }
+ 
+
+		@Override
+		public void makesound() {
+			System.out.println(name+" "+sound);
+			
+		}
+	 	
+}
+class Cat extends Animal{
+	  public Cat(String name) {
+	        super(name, "Meow");
+	    }
+	  
+		@Override
+		public void makesound() {
+		 System.out.println(name+" "+sound);
+			
+		}
+	
+}
+public class Abstractex3 {
+public static void main(String[] args) {
+	Dog d=new Dog("Snoocky");
+	Cat c=new Cat("Bujji");
+	d.makesound();
+	c.makesound();
+	
+}
+}
+
+//Q4
+
+package Abstractiontask.com;
+interface Shape1{
+	double PI = 3.141592653589793;
+    double E = 2.718281828459045;	
+}
+class Circle1 implements Shape1{
+	public void circum(int radius) {
+		System.out.println("cicumference: "+(2*PI*radius));
+	}
+	public void area(int radius) {
+		System.out.println("area: "+(PI*radius*radius));
+	}
+}
+public class Interfaceex4 {
+public static void main(String[] args) {
+	Circle1 c=new Circle1();
+	c.area(5);
+	c.circum(3);
+}
+}
+
+
+//Q5
+
+package Abstractiontask.com;
+abstract class Meal{
+	public void prepareMeal() {
+		cook();
+        plate();
+        serve();
+	}
+	protected abstract void plate();
+	protected abstract void cook();
+	protected abstract  void serve();
+}
+class Breakfast extends Meal{
+
+	@Override
+	protected void plate() {
+		 System.out.println("Plating eggs, bacon, and toast. Pouring coffee.");
+		
+	}
+
+	@Override
+	protected void cook() {
+		 System.out.println("Cooking eggs and bacon, toasting bread, brewing coffee.");
+		
+	}
+
+	@Override
+	protected void serve() {
+		 System.err.println("Serving breakfast with a side of fruit.");
+		
+	}
+	
+}
+class Lunch extends Meal{
+
+	@Override
+	protected void plate() {
+		 System.out.println("Assembling sandwich with turkey, cheese, and lettuce.");
+		
+	}
+
+	@Override
+	protected void cook() {
+		 System.out.println("Toasting bread and heating turkey");
+		
+	}
+
+	@Override
+	protected void serve() {
+		 System.err.println("Serving lunch with a side of chips.");
+		
+	}
+	
+}
+public class Absractex5 {
+public static void main(String[] args) {
+	Breakfast b=new Breakfast();
+	Lunch l=new Lunch();
+	b.plate();
+	b.cook();
+	b.serve();
+	l.plate();
+	l.cook();
+	l.serve();
+	 
+}
+}
+
+//Q6
+
+package Abstractiontask.com;
+interface Vehicle{
+	abstract void start();
+	abstract void stop();
+	default void honk() {
+		System.out.println("Beep Beep!");
+	}
+}
+class Car implements Vehicle{
+
+	@Override
+	public void start() {
+		 System.out.println("Car is starting."); 
+		
+	}
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+		 System.out.println("Car is stopping.");
+		
+	}
+	
+}
+class Motorcycle implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Motorcycle is starting.");
+    }
+    
+    @Override
+    public void stop() {
+        System.out.println("Motorcycle is stopping.");
+    }
+}
+public class Interfex6 {
+public static void main(String[] args) {
+	 Vehicle myCar = new Car();
+     Vehicle myMotorcycle = new Motorcycle();
+   
+     myCar.start();
+     myCar.honk();  
+     myCar.stop();
+ 
+     myMotorcycle.start();
+     myMotorcycle.honk();  
+     myMotorcycle.stop();
+}
+}
+
+//Q7
+
+package Abstractiontask.com;
+
+abstract class Vehiclez{
+	String make;
+	String model;
+	public Vehiclez(String make,String model) {
+		this.make=make;
+		this.model=model;
+	}
+	public void diaplay() {
+		System.out.println("the make:"+make+" , "+"the model: "+model);
+	}
+}
+class Carz extends Vehiclez{
+
+	public Carz(String make, String model) {
+		super(make, model);
+		
+	}
+	public void diaplay() {
+	super.diaplay();
+	}
+	
+}
+class Motorcyclez extends Vehiclez{
+
+	public Motorcyclez(String make, String model) {
+		super(make, model);
+		
+	}
+	public void diaplay() {
+		super.diaplay();
+		}
+}
+public class Abstractex7 {
+public static void main(String[] args) {
+	Motorcyclez mc=new Motorcyclez("2021", "aus");
+	Carz c=new Carz("2013", "bangla");
+	mc.diaplay();
+	c.diaplay();
+	
+}
+}
+
+
+//Q8
+
+package Abstractiontask.com;
+interface MathOperations{
+	abstract int calculate(int a,int b);
+	static int square(int a) {
+	   return (a*a);
+	}	
+}
+class Calculator implements MathOperations{
+
+	@Override
+	public int calculate(int a, int b) {
+		  return (a+b);
+		
+	}
+	  static int square(int a) {
+	        return a * a;
+	    } 
+	
+}
+public class Abstractex8 {
+public static void main(String[] args) {
+	Calculator c=new Calculator();
+	 int result =c.calculate(5, 3);
+	 System.out.println("Result of calculate(5, 3): " + result);
+	 int sqr=c.square(5);
+	 System.out.println("Square of 5: " + sqr);
+	 
+	
+}
+}
+
+
+//Q9
+
+package Abstractiontask.com;
+interface Shapez {
+    
+    double calculateArea();
+    double calculatePerimeter();
+}
+class Circlezz implements Shapez {
+    private double radius;
+    
+    public Circlezz(double radius) {
+        this.radius = radius;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+    
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+class Rectanglez implements Shapez {
+    private double width;
+    private double height;
+  
+    public Rectanglez(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return width * height;
+    }
+    
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (width + height);
+    }
+}
+ class Triangle implements Shapez {
+    private double side1;
+    private double side2;
+    private double side3;
+    
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+    
+    @Override
+    public double calculateArea() {
+       
+        double s = (side1 + side2 + side3) / 2;
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+    
+    @Override
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+}
+
+public class Interfex9 {
+public static void main(String[] args) {
+	Shapez circle = new Circlezz(5);
+    Shapez rectangle = new Rectanglez(4, 7);
+    Shapez triangle = new Triangle(3, 4, 5);
+   
+    System.out.println("Circle: ");
+    System.out.println("Area: " + circle.calculateArea());
+    System.out.println("Perimeter: " + circle.calculatePerimeter());
+  
+    System.out.println("\nRectangle: ");
+    System.out.println("Area: " + rectangle.calculateArea());
+    System.out.println("Perimeter: " + rectangle.calculatePerimeter());
+ 
+    System.out.println("\nTriangle: ");
+    System.out.println("Area: " + triangle.calculateArea());
+    System.out.println("Perimeter: " + triangle.calculatePerimeter());
+}
+}
+
+
+//Q10
+
+package Abstractiontask.com;
+abstract class Employ{
+	String name;
+	double salary;
+	 public Employ(String name, double salary) {
+	        this.name = name;
+	        this.salary = salary;
+	    }
+	abstract double calculateBonus();
+}
+class Manager extends Employ{
+    
+	public Manager(String name, double salary) {
+		super(name, salary);
+		 
+	}
+
+	@Override
+	double calculateBonus() {
+		 
+		return salary*0.10;
+	}
+
+	 
+}
+class Developer extends Employ{
+	 public Developer(String name, double salary) {
+	        super(name, salary);
+	    }
+	 @Override
+	    public double calculateBonus() {
+	         
+	        return salary * 0.15;
+	
+}
+}
+public class Abstractex10 {
+public static void main(String[] args) {
+	Manager m = new Manager("ramesh", 70000);
+	Developer d=new Developer("vijay", 60000);
+	System.out.println(m.name);
+	System.out.println(m.salary);
+	System.out.println(m.calculateBonus());
+	System.out.println(d.name);
+	System.out.println(d.salary);
+	System.out.println(m.calculateBonus());
+}
+}
+
+//Q11
+
+package Abstractiontask.com;
+abstract class Shape11{
+	abstract void calculateArea();
+}
+class Circle11 extends Shape11{
+    int rad;   
+    public Circle11(int rad) {
+    	this.rad=rad;
+    }
+	@Override
+	void calculateArea() {
+		 System.out.println(Math.PI*rad*rad);	
+	}	
+}
+class Rectangle1 extends Shape11{
+    int length;   
+    int width;   
+    
+	public Rectangle1(int length, int width) {
+		this.length=length;
+    	this.width=width;
+	}
+	@Override
+	void calculateArea() {
+		 System.out.println(length*width);	
+	}	
+}
+class Triangle1 extends Shape11{
+    int l;   
+    int b;  
+    public Triangle1(int l,int b) {
+    	this.l=l;
+    	this.b=b;
+    }
+	@Override
+	void calculateArea() {
+		 System.out.println(0.5*l*b);	
+	}	
+}
+public class Abstractex11 {
+public static void main(String[] args) {
+	Circle11 c=new Circle11(5);
+	Rectangle1 r=new Rectangle1(5, 6);
+	Triangle1 t=new Triangle1(3, 2);
+	c.calculateArea();
+	r.calculateArea();
+	t.calculateArea();
+}
+}
+
+//Q12
+
+package Abstractiontask.com;
+interface Flyable{
+	abstract void fly();
+ 
+}
+interface Swimmable{
+	 
+	abstract void swim();
+}
+class Duck implements Flyable,Swimmable{
+
+	@Override
+	public void fly() {
+		 System.out.println("the duck can fly");
+		
+	}
+
+	@Override
+	public void swim() {
+		 System.out.println("the duck can swim");
+		
+	}
+	
+}
+public class Interex12 {
+public static void main(String[] args) {
+	Duck d=new Duck();
+	d.fly();
+	d.swim();
+}
+}
+
+
+

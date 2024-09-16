@@ -1,0 +1,136 @@
+PizzaCaseStudy:
+
+package JavaProject.com;
+
+public class PizzaApp {
+   private String pizName;
+   private int pizPrice;
+    private int pizId;
+   private String pizDelAdd;
+public String getPizName() {
+	return pizName;
+}
+public void setPizName(String pizName) {
+	this.pizName = pizName;
+}
+public int getPizPrice() {
+	return pizPrice;
+}
+public void setPizPrice(int pizPrice) {
+	this.pizPrice = pizPrice;
+}
+public int getPizId() {
+	return pizId;
+}
+public void setPizId(int pizId) {
+	this.pizId = pizId;
+}
+public String getPizDelAdd() {
+	return pizDelAdd;
+}
+public void setPizDelAdd(String pizDelAdd) {
+	this.pizDelAdd = pizDelAdd;
+}
+ public PizzaApp() {
+	// TODO Auto-generated constructor stub
+}
+public PizzaApp(String pizName, int pizPrice, int pizId, String pizDelAdd) {
+	super();
+	this.pizName = pizName;
+	this.pizPrice = pizPrice;
+	this.pizId = pizId;
+	this.pizDelAdd = pizDelAdd;
+}
+@Override
+public String toString() {
+	return "PizzaApp [pizName=" + pizName + ", pizPrice=" + pizPrice + ", pizId=" + pizId + ", pizDelAdd=" + pizDelAdd
+			+ "]";
+}
+ 
+   
+}
+
+PizzaOrder:
+package JavaProject.com;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+
+public class PizzaOrd {
+public static void main(String[] args) {
+	HashMap<Integer,PizzaApp> pizza=new HashMap<>();
+	Scanner sc=new Scanner(System.in);
+	int orderid=345678;
+	while(true) {
+		System.out.println("******Pizza Menu Application***********");
+		System.out.println("1.Add Pizza");
+		System.out.println("2.Update Pizza");
+		System.out.println("3.Get Pizza");
+		System.out.println("4.Delete Pizza");
+		System.out.println("5.Get All Pizza");
+		System.out.println("Enter your option from above mentioned:");
+		int option=sc.nextInt();
+		switch(option) {
+		case 1:
+			System.out.println("**********Adding Pizza*********");
+			System.out.println("Enter Pizza Name");
+			String p=sc.next();
+			System.out.println("Enter Pizza Price");
+			int pp=sc.nextInt();
+			System.out.println("Enter Pizza quantity");
+			int pq=sc.nextInt();
+			System.out.println("Enter Pizza Delivery Address");
+			String pa=sc.next();
+			PizzaApp piz=new PizzaApp(p, pp, pq, pa);
+			pizza.put(++orderid, piz);
+			System.out.println("Pizza Added Successfully: "+orderid);
+			break;
+		case 2:
+			System.out.println("*********Update Pizza Order******");
+			System.out.println("Enter the Order Id");
+			int pid=sc.nextInt();
+			System.out.println("Enter Pizza Name");
+			String p1=sc.next();
+			System.out.println("Enter Pizza Price");
+			int pp1=sc.nextInt();
+			System.out.println("Enter Pizza quantity");
+			int pq1=sc.nextInt();
+			System.out.println("Enter Pizza Delivery Address");
+			String pa1=sc.next();
+			PizzaApp piz1=new PizzaApp(p1, pp1, pq1, pa1);
+			pizza.put(pid, piz1);
+			System.out.println("Pizza Updated Successfully: "+pid);
+			break;
+		case 3:
+			System.out.println("*******Get The Pizza in the cart**********");
+			System.out.println("Enter the Order Id");
+			int pid1=sc.nextInt();
+			PizzaApp pizobj=pizza.get(pid1);
+			System.out.println("the pizza your searching: "+pizobj);
+			break;
+		case 4:
+			System.out.println("*********Delete Pizza*******");
+			System.out.println("Enter the order Id");
+			int pid2=sc.nextInt();
+			pizza.remove(pid2);
+			System.out.println("the deleted pizza is: "+pid2);
+			break;
+		case 5:
+			System.out.println("*****Get All Pizza's*******");
+			Set<Entry<Integer,PizzaApp>>result=pizza.entrySet();
+			Iterator<Entry<Integer,PizzaApp>>itr=result.iterator();
+			while(itr.hasNext()) {
+				Entry<Integer, PizzaApp>finalresult=itr.next();
+				System.out.println(finalresult.getKey()+" "+finalresult.getValue());
+			}
+			break;
+		default:
+			System.out.println("Enter Valid Option To Perform Action");
+			
+		}
+	}
+}
+}

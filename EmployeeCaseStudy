@@ -1,0 +1,138 @@
+EmployeeCaseStudy:
+package JavaProject.com;
+
+public class Employee {
+	 private String empName;
+	 private int empSal;
+	 private String empAdd;
+	 private String empMail;
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	public int getEmpSal() {
+		return empSal;
+	}
+	public void setEmpSal(int empSal) {
+		this.empSal = empSal;
+	}
+	public String getEmpAdd() {
+		return empAdd;
+	}
+	public void setEmpAdd(String empAdd) {
+		this.empAdd = empAdd;
+	}
+	public String getEmpMail() {
+		return empMail;
+	}
+	public void setEmpMail(String empMail) {
+		this.empMail = empMail;
+	}
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+	public Employee(String empName, int empSal, String empAdd, String empMail) {
+		super();
+		this.empName = empName;
+		this.empSal = empSal;
+		this.empAdd = empAdd;
+		this.empMail = empMail;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empName=" + empName + ", empSal=" + empSal + ", empAdd=" + empAdd + ", empMail=" + empMail
+				+ "]";
+	}
+	
+}
+
+Client:
+package JavaProject.com;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+
+
+//Employee Management Application
+
+public class Client {
+public static void main(String[] args) {
+	 
+	HashMap<Integer,Employee>employee=new HashMap<Integer,Employee>();
+	int empid=456;
+	while(true) {
+		 System.out.println("*******Employeee Managemnet Application*********");
+		 System.out.println("1.Add Employee");
+		 System.out.println("2.Update Employee");
+		 System.out.println("3.Get Employee");
+		 System.out.println("4.Delete Employee");
+		 System.out.println("5.Get All  Employee");
+	Scanner sc=new Scanner(System.in);
+	int option=sc.nextInt();
+	switch(option) {
+	case 1:
+		System.out.println("****Add Employee****");
+		System.out.println("Enter Employee Namee");
+		String empName=sc.next();
+		System.out.println("Enter Employee Salary");
+		int empSal=sc.nextInt();
+		System.out.println("Enter Employee Address");
+		String empAdd=sc.next();
+		System.out.println("Enter Employee Email Id");
+		String empMail=sc.next();
+		Employee emp=new Employee(empName,empSal,empAdd,empMail);
+		employee.put(++empid, emp);	
+		System.out.println("Employyee Added Succssfully: "+empid);
+		break;
+	case 2:
+		System.out.println("****Update Employee****");
+		System.out.println("Enter Employee Id");
+		int empid1=sc.nextInt();
+		System.out.println("Enter Employee Namee");
+		String empName1=sc.next();
+		System.out.println("Enter Employee Salary");
+		int empSal1=sc.nextInt();
+		System.out.println("Enter Employee Address");
+		String empAdd1=sc.next();
+		System.out.println("Enter Employee Email Id");
+		String empMail1=sc.next();
+		Employee emp1=new Employee(empName1,empSal1,empAdd1,empMail1);
+		employee.put(empid1, emp1);
+		System.out.println("Employee Updated Successfully: "+empid1);
+		break;
+	case 3:
+		System.out.println("*******Get Employyee**********");
+		System.out.println("enter employee id");
+		int eid1=sc.nextInt();
+		Employee empobj=employee.get(eid1);
+		System.out.println("Employee fetch Successfully: "+empobj);
+		break;
+	
+	case 4:
+		System.out.println("******Delete Employyee******");
+		System.out.println("enter employee id");
+		int empid2=sc.nextInt();
+		employee.remove(empid2);
+		System.out.println("Employee deleted Successfully: "+empid2);
+		break;
+	case 5:
+		System.out.println("*****Get All Employees***********");
+		 
+		Set<Entry<Integer, Employee>> result=employee.entrySet();
+		Iterator<Entry<Integer, Employee>> itr = result.iterator();
+		while(itr.hasNext()) {
+			Entry<Integer, Employee> finalRes=itr.next();
+			System.out.println(finalRes.getKey()+" "+finalRes.getValue());
+		}
+		break;
+	default:
+		System.out.println("******OOPS! Enter valid option**********");
+	}
+	}	
+}
+}

@@ -1,0 +1,136 @@
+Exercise 1:
+package methodsassignment;
+
+public class MethodsAssign {
+	public double temp(int celsius) {
+		double fahrenheit=(celsius*9/5)+32;
+		return fahrenheit;
+		
+	}
+public static void main(String[] args) {
+	MethodsAssign ma=new MethodsAssign();
+	System.out.println(ma.temp(30));
+}
+}
+
+Exercise 2:
+
+package methodsassignment;
+
+public class MethodsAssign {
+	public double circle(int radius) {
+		double  area=Math.PI*radius*radius;
+		return area;
+		
+	}
+public static void main(String[] args) {
+	MethodsAssign ma=new MethodsAssign();
+	System.out.println(ma.circle(2));
+}
+}
+
+Exercise 3:
+
+package methodsassignment;
+
+public class MethodsAssign {
+	public int max(int a,int b) {
+		if(a>b) {
+		return a;
+		}
+		else {
+			return b;
+		}
+		
+	}
+public static void main(String[] args) {
+	MethodsAssign ma=new MethodsAssign();
+	System.out.println(ma.max(5, 6));
+	 
+}
+}
+
+Exercise 4:
+
+package methodsassignment;
+
+public class MethodsAssign {
+	public double intrest(int amount,double d,int time) {
+	      double simintrest=(amount*d*time)/100;
+	      return simintrest;
+		
+	}
+public static void main(String[] args) {
+	MethodsAssign ma=new MethodsAssign();
+	System.out.println(ma.intrest(20000, 2.5, 2));
+	 
+}
+}
+
+Exercise 5:
+
+package methodsassignment;
+
+public class MethodsAssign {
+	public int peri(int length,int breadth) {
+	      int periofrect=2*(length+breadth);
+	      return periofrect;
+		
+	}
+public static void main(String[] args) {
+	MethodsAssign ma=new MethodsAssign();
+	System.out.println(ma.peri(3, 4));
+	 
+}
+}
+
+Exercise 6:
+
+package methodsassignment;
+
+public class MethodsAssign {
+	public double avg(int a,int b,int c) {
+	      double avgofthree=(a+b+c)/3;
+	      return avgofthree;
+		
+	}
+public static void main(String[] args) {
+	MethodsAssign ma=new MethodsAssign();
+	System.out.println(ma.avg(4, 5, 7));
+	 
+}
+}
+
+Exercise 7:
+
+package methodsassignment;
+
+public class MethodsAssign {
+	public double mintohr(double min) {
+		double inhr=min/(60);
+		return inhr;
+			
+	}
+public static void main(String[] args) {
+	MethodsAssign ma=new MethodsAssign();
+	System.out.println(ma.mintohr(40));
+	 
+}
+}
+
+Exercise 8:
+
+package methodsassignment;
+
+public class MethodsAssign {
+	public double vol(int radius,int height) {
+		double volofcylin=Math.PI*(radius*radius)*height;
+		return volofcylin;
+			
+	}
+public static void main(String[] args) {
+	MethodsAssign ma=new MethodsAssign();
+	System.out.println(ma.vol(5, 6));
+	 
+}
+}

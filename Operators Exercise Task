@@ -1,0 +1,85 @@
+Exercise 1:Arithmetic Operators
+program:
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Operatorsexercise {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	float a=sc.nextInt();
+	float b=sc.nextInt();
+	System.out.println("addition: "+(a+b));
+	System.out.println("subtraction: "+(a-b));
+	System.out.println("multiplication: "+(a*b));
+	System.out.println("division: "+(a/b));
+	System.out.println("modulus: "+(a%b));
+}
+}
+
+Exercise 2:Comparison Operators
+program:
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Operatorsexercise {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int a=sc.nextInt();
+	int b=sc.nextInt();
+	if(a==b) {
+		System.out.println("equal");
+	}
+	else if(a!=b) {
+		System.out.println("not equal");
+	}
+	else if(a>b) {
+		System.out.println("greater than b");
+	}
+	else if(a<b) {
+		System.out.println("lesser than a");
+	}
+	else if(a>=b) {
+		System.out.println("greater than or equal to b");
+	}
+	else  {
+		System.out.println("lesser than or equal to b");
+	}
+}
+}
+
+Exercise 3: Logical Operators
+program:
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Operatorsexercise {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int a=sc.nextInt();
+    if(a>=10 && a<=20) {
+    	System.out.println("the given number is in specified range");
+    }
+    else {
+    	System.out.println("number is out of range");
+    }
+}
+}
+
+Exercise 4:Ternary Operator
+program:
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Operatorsexercise {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int a=sc.nextInt();
+    String res=(a%2==0)?"even":"odd";
+    System.out.println(res);
+}
+}
+

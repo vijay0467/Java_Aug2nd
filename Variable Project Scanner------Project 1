@@ -1,0 +1,53 @@
+package JavaProject.com;
+
+import java.util.Scanner;
+
+public class GradeCalculator {
+	  public static void main(String[] args) {
+ 
+		    String studentName;
+	        int studentAge;
+	        double grade1, grade2, grade3, average;
+	        String classification;
+
+	     
+	        Scanner scanner = new Scanner(System.in);
+
+	    
+	        System.out.print("Enter student's name: ");
+	        studentName = scanner.nextLine();
+
+	        System.out.print("Enter student's age: ");
+	        studentAge = scanner.nextInt();
+
+	        System.out.print("Enter grade for Math: ");
+	        grade1 = scanner.nextDouble();
+
+	        System.out.print("Enter grade for Science: ");
+	        grade2 = scanner.nextDouble();
+
+	        System.out.print("Enter grade for English: ");
+	        grade3 = scanner.nextDouble();
+
+	         
+	        average = (grade1 + grade2 + grade3) / 3;
+
+	         
+	        if (average >= 70) {
+	            classification = "First Class";
+	        } else if (average >= 60) {
+	            classification = "Second Class";
+	        } else if (average >= 50) {
+	            classification = "Third Class";
+	        } else {
+	            classification = "Fail";
+	        }
+
+	        System.out.println("\nStudent's Name: " + studentName);
+	        System.out.println("Student's Age: " + studentAge);
+	        System.out.printf("Grades: Math: %.2f, Science: %.2f, English: %.2f%n", grade1, grade2, grade3);
+	        System.out.printf("Average Grade: %.2f%n", average);
+	        System.out.println("Classification: " + classification);
+
+}
+}

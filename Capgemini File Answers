@@ -1,0 +1,148 @@
+Program 1:
+package dayassignments;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	String s="Hi";
+	String s1="Welcome";
+	System.out.println(s+" and "+s1);
+}
+}
+
+Program 2:
+package dayassignments;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	 int n=28;
+	 System.out.println(n);
+}
+}
+
+Program 3:
+package dayassignments;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	  double n=5.374675 ;
+	  System.out.print(n+",");
+	  System.out.printf("%.1f", n);
+}
+}
+
+Program 4:
+package dayassignments;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	   char a='d';
+	   System.out.println(a);
+}
+}
+
+Program 5:
+package dayassignments;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	    int a=5;
+	    float f=(a);
+	    System.out.println(f);
+	    
+}
+}
+
+Program 6:
+
+package dayassignments;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	     char a=101;
+	      System.out.println(a);
+	     
+}
+}
+
+Program 7:
+
+package dayassignments;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	     char a='s';
+	     int c=a;
+	     System.out.println(c);
+	     
+}
+}
+
+Program 8:
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  String name=sc.nextLine();
+	  System.out.println(name+" ! Welcome to Examly Event Management System");
+	     
+}
+}
+
+Program 9:
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+    int a=67;
+    int b=801;
+    double result=a+b;
+    System.out.println(result);
+	     
+}
+}
+
+Program 10:
+
+package dayassignments;
+
+import java.util.Scanner;
+
+public class Capgeminifileans {
+public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+ 
+    System.out.print("Enter an integer: ");
+    int integerValue = scanner.nextInt();
+
+ 
+    System.out.print("Enter a double: ");
+    double doubleValue = scanner.nextDouble();
+
+   
+    System.out.print("Enter a boolean value (true/false): ");
+    boolean booleanValue = scanner.nextBoolean();
+ 
+    System.out.print("Enter a single character: ");
+    char charValue = scanner.next().charAt(0); 
+
+    
+    System.out.print("Enter a string: ");
+    String stringValue = scanner.next();  
+
+  
+    System.out.println("\nYou entered the following values:");
+    System.out.println("Integer: " + integerValue);
+    System.out.println("Double: " + doubleValue);
+    System.out.println("Boolean: " + booleanValue);
+    System.out.println("Character: " + charValue);
+    System.out.println("String: " + stringValue);
+	     
+}
+}

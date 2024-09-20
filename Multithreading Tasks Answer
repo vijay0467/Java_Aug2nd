@@ -1,0 +1,98 @@
+//Q1
+package multithreadingAssignment;
+
+class Threadex11 extends Thread{
+	public void run() {
+	for(int i=0;i<=10;i++) {
+		System.out.println("i am a parent thread class");
+	}
+}
+}
+public class Threadex1 {
+public static void main(String[] args) {
+	  
+	Threadex11 th=new Threadex11();
+	th.start();
+	
+	for(int i=0;i<=10;i++) {
+		System.out.println("i am a child thread class");
+	}
+}
+}
+
+
+
+//Q2
+
+package multithreadingAssignment;
+
+class Runnableex1 implements Runnable{
+	public void run() {
+	for(int i=0;i<=10;i++) {
+		System.out.println("i am a parent thread class");
+	}
+}
+}
+public class Threadex1 {
+public static void main(String[] args) {
+	 
+	Runnableex1 rn=new Runnableex1();
+	Thread th=new Thread(rn);
+	th.start();
+	
+	for(int i=0;i<=10;i++) {
+		System.out.println("i am a child thread class");
+	}
+}
+}
+
+
+
+
+//Q3
+package multithreadingAssignment;
+class GetThread extends Thread{
+	public void run() {
+		System.out.println("Thread Name: " + Thread.currentThread().getName());
+		   for (int i = 1; i <= 5; i++) {
+	            System.out.println(getName() + ": " + i);
+	             
+	        }
+	}
+}
+public class Threadex3 {
+public static void main(String[] args) {
+	GetThread gt = new GetThread();
+	gt.setName("rahul");
+	gt.start();
+ 
+	System.out.println("Main Thread Name: " + Thread.currentThread().getName());
+	  for (int i = 1; i <= 5; i++) {
+          System.out.println(Thread.currentThread().getName() + ": " + i);
+     
+      }
+	
+}
+}
+
+
+
+//Q4
+
+package multithreadingAssignment;
+class GetThread extends Thread{
+	public void run() {
+		 
+		System.out.println("Thread Priority: " + this.getPriority());
+		  
+	}
+}
+public class Threadex3 {
+public static void main(String[] args) {
+	GetThread gt = new GetThread();
+	gt.setPriority(Thread.MAX_PRIORITY);
+	gt.start();
+	System.out.println("Main thread's priority: " + Thread.currentThread().getPriority());	 
+	
+}
+}

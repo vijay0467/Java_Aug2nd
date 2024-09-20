@@ -1,0 +1,48 @@
+//Q1
+package dayassignments;
+ 
+public class Polymorphismcodingquestions {
+public static void main(String[] args) {
+	System.out.println("Hi");
+    main("Hello World");   
+    main("Tom", "Jerry");  
+}
+
+public static void main(String str) {
+    System.out.println("Overloaded:" + str);
+}
+ 
+public static void main(String str1, String str2) {
+    System.out.println("Overloaded:" + str1 + " & " + str2);
+}	
+}
+ 
+
+
+//Q2
+package polymorphismassign;
+class Main{
+	public int print(int n) {
+		return n;
+	}
+	public String print(String s) {
+		return s;
+	}
+	public boolean print(boolean b) {
+		 return b;
+		
+	}
+}
+public class Methdovldex2 {
+public static void main(String[] args) {
+	Main mn=new Main();
+	int num=mn.print(5);
+	String str=mn.print("vijay");
+	boolean bul=mn.print(false);
+	System.out.println(num);
+	System.out.println(str);
+	System.out.println(bul);
+	 
+	
+}
+}

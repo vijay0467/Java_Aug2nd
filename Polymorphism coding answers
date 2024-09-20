@@ -20,29 +20,108 @@ public static void main(String str1, String str2) {
 
 
 //Q2
+
 package polymorphismassign;
 class Main{
-	public int print(int n) {
-		return n;
+	public void print(int n) {
+		System.out.println(n);
 	}
-	public String print(String s) {
-		return s;
+	public void print(String s) {
+		System.out.println(s);
 	}
-	public boolean print(boolean b) {
-		 return b;
+	public void print(boolean b) {
+		 System.out.println(b);
 		
 	}
 }
 public class Methdovldex2 {
 public static void main(String[] args) {
 	Main mn=new Main();
-	int num=mn.print(5);
-	String str=mn.print("vijay");
-	boolean bul=mn.print(false);
-	System.out.println(num);
-	System.out.println(str);
-	System.out.println(bul);
+	mn.print(35);
+	mn.print("Hello World");
+	mn.print("24.35");
 	 
 	
 }
 }
+
+ 
+
+//Q3
+
+package polymorphismassign;
+class Vehicle{
+	public void move(String s) {
+		System.out.println("vehicle is moving: "+s);
+	}
+}
+class Motorbike extends Vehicle{
+	@Override
+	public void move(String s1) {
+		System.out.println("motorbike is moving: "+s1);
+	}
+}
+public class Demoex3 {
+public static void main(String[] args) {
+	Motorbike mb=new Motorbike();
+	Vehicle v=new Vehicle();
+	v.move("heavy rider");
+	mb.move("two wheeler");;
+}
+}
+
+//Q4
+
+package polymorphismassign;
+class Parent{
+	public void m1() {
+		System.out.println("i am from parent");
+	}
+	public void m2(int n) {
+		System.out.println(n);
+	}
+}
+class Child extends Parent{
+	@Override
+	public void m1() {
+		System.out.println("i am from child");
+	}
+	@Override
+	public void m2(int n) {
+		System.out.println(n);
+	}
+	
+}
+public class Demoex4 {
+public static void main(String[] args) {
+	Child c=new Child();
+	Parent p=new Parent();
+	p.m1();
+	p.m2(7);
+	c.m1();
+	c.m2(4);
+}
+}
+
+
+//Q5
+
+package polymorphismassign;
+class Icecream{
+	public double Quantity(int r,int h) {
+		return (1.0/3)*h*Math.PI*r*r;	
+	}
+	public double Quantity(int r) {
+		return (4.0/3)*Math.PI*r*r*r;
+	}
+	
+}
+public class Demoex5 {
+public static void main(String[] args) {
+	Icecream ic=new Icecream();
+	System.out.println(ic.Quantity(4, 7));
+	System.out.println(ic.Quantity(5));
+	 
+}
+}
+

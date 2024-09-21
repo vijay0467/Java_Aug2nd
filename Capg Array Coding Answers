@@ -34,3 +34,129 @@ public static void main(String[] args) {
 	 
 }
 }
+
+
+//Q2
+
+package CapgArrayCodingTasks;
+
+import java.util.Scanner;
+
+public class Demo2 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the number of goods received ");
+	int tg=sc.nextInt();
+	int arr[]=new int[tg];
+	int tw=0;
+	for(int i=0;i<tg;i++) {
+		System.out.printf("enter the weight of each goods arr[%d]: ",i);
+		arr[i]=sc.nextInt();
+		tw+=arr[i];
+	}
+	System.out.println("The total weight of goods:"+tw);
+}
+}
+
+//Q3
+
+package CapgArrayCodingTasks;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Demo3 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the array length received ");
+	int n=sc.nextInt();
+	int arr[]=new int[26];
+	for(int i=0;i<n;i++) {
+		System.out.printf("enter each value in arr[%d]: ",i);
+		int num=sc.nextInt();
+		if(num>=1 && num<=25) {
+			arr[num]++;
+		}
+		else {
+			System.out.println("invalid input: "+num+" (must between  to 25");
+			return;
+		}
+	}
+	
+	System.out.println("freq distribution: ");
+	for(int i=1;i<=25;i++) {
+		if(arr[i]>0) {	 
+			System.out.println(i+"  occurs "+arr[i]+" time's");	
+		}
+ 
+	}
+	 
+}
+}
+
+//Q4
+
+package CapgArrayCodingTasks;
+
+import java.util.Scanner;
+
+public class Demo2 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the size of array ");
+	int as=sc.nextInt();
+	int arr[]=new int[as];
+	int sum=0;
+	int prod=1;
+	for(int i=0;i<as;i++) {
+		System.out.printf("enter the weight of each goods arr[%d]: ",i);
+		arr[i]=sc.nextInt();
+		sum+=arr[i];
+		prod*=arr[i];
+	}
+	if(sum%2==0) {
+		System.out.println("the sum is even so: "+sum);
+	}
+	else {
+		System.out.println("the sum is odd so: "+prod);
+	}
+	 
+}
+}
+
+//Q5
+package CapgArrayCodingTasks;
+
+import java.util.Scanner;
+
+public class Demo5 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the n movies screened count");
+	int n=sc.nextInt();
+	int l[]=new int[n];
+	int r[]=new int[n];
+	for(int i=0;i<n;i++) {
+		System.out.printf("enter length of each movie l[%d]: ",i);
+		l[i]=sc.nextInt();
+	}
+	for(int i=0;i<n;i++) {
+			System.out.printf("enter rating of each movie r[%d]: ",i);
+			r[i]=sc.nextInt();
+}
+	int bestmovieindex=0;
+	int maxProd=l[0]*r[0];
+	int maxRating=r[0];
+	for(int i=0;i<n;i++) {
+		int prod=l[i]*r[i];
+		if(prod>=maxProd && r[i]>maxRating) {
+			maxProd=prod;
+			maxRating=r[i];
+			bestmovieindex=i;
+		}
+		 
+	}
+	System.out.println("best movie index is: "+(bestmovieindex+1));
+}
+}
+

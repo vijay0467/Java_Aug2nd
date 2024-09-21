@@ -1,0 +1,20 @@
+//Q1
+package CollectionCodingAnswers;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Demo1 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the length of arraylist");
+	int n=sc.nextInt();
+	ArrayList<String>al=new ArrayList<>(n);
+	for(int i=0;i<n;i++) {
+		System.out.printf("enter the arraylist elements al[%d]:",i);
+		al.add(sc.next());
+		
+	}
+	System.out.println(al);
+}
+}

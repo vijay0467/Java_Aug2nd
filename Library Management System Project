@@ -1,0 +1,123 @@
+Parent1:Library file
+package LibraryManagemntSystem.com;
+
+public class Library {
+     private String btitle;
+     private String bauthor;
+	public String getBtitle() {
+		return btitle;
+	}
+	public void setBtitle(String btitle) {
+		this.btitle = btitle;
+	}
+	public String getBauthor() {
+		return bauthor;
+	}
+	public void setBauthor(String bauthor) {
+		this.bauthor = bauthor;
+	}
+	public Library(String btitle, String bauthor) {
+		super();
+		this.btitle = btitle;
+		this.bauthor = bauthor;
+	}
+	public Library() {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Library [btitle=" + btitle + ", bauthor=" + bauthor + "]";
+	}
+	
+     
+}
+
+Program 2:User File
+
+package LibraryManagemntSystem.com;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class User {
+public static void main(String[] args) {
+	 ArrayList<Library>db=new ArrayList<Library>();
+	 while(true) {
+	 System.out.println("****Library Management System*****");
+	 System.out.println("1.Add a New Book");
+	 System.out.println("2.Search for a Book by title");
+	 System.out.println("3.Display All Books");
+	 System.out.println("4.Remove a Book By title");
+	 System.out.println("5.Exit");
+	 Scanner sc=new Scanner(System.in);
+	 System.out.println("enter your option from above mentioned options: ");
+	 int option=sc.nextInt();
+	 switch(option) {
+	 case 1:
+		 System.out.println("***Adding a Book*****");
+		 System.out.println("enter the book title");
+		 String btitle=sc.next();
+		 System.out.println("enter the book author");
+		 String bname=sc.next();
+		 Library lib=new Library(btitle, bname);
+		 db.add(lib);
+		 System.out.println("book added successfully");
+		 break;
+	 case 2:
+		 System.out.println("***Searching a Book*****");
+		 System.out.println("enter the title u want to search");
+		 String searchTitle=sc.next();
+		 boolean found = false;
+		 for (Library book : db) {
+		        if (book.getBtitle().equalsIgnoreCase(searchTitle)) {
+		            System.out.println("Book Found: ");
+		            System.out.println("Title: " + book.getBtitle());
+		            System.out.println("Author: " + book.getBauthor());
+		            found = true;
+		            break;
+		        }
+		    }
+		 if (!found) {
+		        System.out.println("Book not found");
+		    }
+		    break;
+	 case 3:
+		 System.out.println("***Displaying All Books***");
+		 if (db.isEmpty()) {
+             System.out.println("No books in the library.");
+         } 
+		 else {
+		 for (Library book : db) {
+			 System.out.println("Books in the Library:");
+			 System.out.println("Title: "+book.getBtitle()+","+"Author: "+book.getBauthor());
+		 }
+		 }
+		 break;
+	 case 4:
+		 System.out.println("***Removing a book by title***");
+		 System.out.println("enter the title u want to remove");
+		 String removeTitle=sc.next();
+		 boolean removed = false;
+		 for (int i = 0; i < db.size(); i++) {
+		        if (db.get(i).getBtitle().equalsIgnoreCase(removeTitle)) {
+		        	db.remove(i);
+		            System.out.println("Book Removed Successfully");
+		            removed= true;
+		            break;
+		        }
+		    }
+		 if(!removed) {
+			 System.out.println("Book Not Found");
+		 }
+		 break;
+	 case 5:
+		 System.out.println("Existing System...");
+         return;
+	default:
+		System.out.println("******OOPS! Enter valid option********");
+		 
+	 }
+	 }
+}
+}
+

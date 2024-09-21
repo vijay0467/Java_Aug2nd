@@ -1,0 +1,123 @@
+//Q1
+
+package StringCodingAnswers.com;
+
+import java.util.Scanner;
+
+public class Demo1 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	String s=sc.next();
+	String rev="";
+	for(int i=s.length()-1;i>=0;i--) {
+		char c=s.charAt(i);
+		rev+=c;
+	}
+	if(s.equals(rev)) {
+		System.out.println("Palindrome");
+	}
+	else {
+		System.out.println("Not Palindrome");
+	}
+}
+}
+
+//Q2
+
+package StringCodingAnswers.com;
+
+import java.util.Scanner;
+
+public class Demo2 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	String s=sc.next();
+	String cs=s.toLowerCase();
+	int vc=0;
+	for(int i=0;i<s.length();i++) {
+		char c=s.charAt(i);
+		if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
+			vc++;
+		}
+	}
+	System.out.println("Number Of Vowels: "+vc);
+}
+}
+
+//Q3
+
+package StringCodingAnswers.com;
+
+import java.util.Scanner;
+
+public class Demo3 {
+public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter the first string: ");
+    String str1 = scanner.nextLine();
+    System.out.print("Enter the second string: ");
+    String str2 = scanner.nextLine();
+    int comparisonResult = str1.compareTo(str2);
+    if (comparisonResult > 0) {
+        System.out.println("The first string is lexicographically greater than the second string.");
+    } else if (comparisonResult == 0) {
+        System.out.println("The two strings are lexicographically equal.");
+    } else {
+        System.out.println("The first string is lexicographically less than the second string.");
+    }
+}
+}
+
+//Q4
+
+package StringCodingAnswers.com;
+
+import java.util.Scanner;
+
+public class Demo4 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the string: ");
+	String s=sc.next();
+	String s1=s.toLowerCase();
+	String ups="";
+	for(int i=0;i<s.length();i++) {
+		char c=s1.charAt(i);
+		if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u') {
+			continue; 
+		}
+		else {
+			ups+=c;
+		}
+		
+	}
+	System.out.println("After removing the vowels in string: "+ups);
+}
+}
+
+//Q5
+
+package StringCodingAnswers.com;
+
+import java.util.Scanner;
+
+public class Demo4 {
+public static void main(String[] args) {
+	   Scanner scanner = new Scanner(System.in);      
+       System.out.println("Enter the email address:");
+       String email = scanner.nextLine();       
+       System.out.println(email);
+       int atIndex = email.indexOf('@');      
+       if (atIndex != -1 && atIndex != email.length() - 1) {
+           String domain = email.substring(atIndex + 1);
+           if (domain.endsWith(".com") || domain.endsWith(".in") || 
+               domain.endsWith(".net") || domain.endsWith(".org")) {
+               System.out.println("Valid Email");
+           } else {
+               System.out.println("Invalid Email");
+           }
+       } else {
+           System.out.println("Invalid input");
+       }
+}
+}

@@ -1,0 +1,36 @@
+//Q1
+package CapgArrayCodingTasks;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Demo1 {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the total numbers of passesngers");
+	int tp=sc.nextInt();
+	if(tp<0) {
+		System.out.println("invalid input the number of passengers is never be negative");
+		return;
+	}
+	int ages[]=new int[tp];
+	boolean isValid=true;
+	for(int i=0;i<tp;i++) {
+		System.out.printf("enter the elemnents arr[%d]:",i);
+		ages[i]=sc.nextInt();
+		 if (ages[i] < 0) {
+             isValid=false;
+             break;
+         }
+	}
+	  if(!isValid) {
+		  System.out.println("inValid age is entered");
+		  return;
+	  }
+	  else {
+			 Arrays.sort(ages);
+			 System.out.println("younger passeger age is: "+ages[0]+" "+"older passeger age is: "+ages[tp-1]);
+	  }
+	 
+}
+}

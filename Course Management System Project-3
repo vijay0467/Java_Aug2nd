@@ -1,0 +1,113 @@
+Course Management System:
+
+package CourseMngmtSystem;
+class Person{
+	String pid;
+	String pname;
+	String pdept;
+	public Person(String pid,String pname,String pdept) {
+		this.pid=pid;
+		this.pname=pname;
+		this.pdept=pdept;			
+	}
+	public void display() {
+		System.out.println("pid: "+pid+" , "+"pname: "+pname+" , "+"pdept: "+pdept);
+	}
+}
+class Student extends Person{
+	int stbatch;
+	public Student(String pid, String pname, String pdept,int stbatch) {
+		super(pid, pname, pdept);
+		this.stbatch=stbatch;
+	}
+	public void display() {
+		super.display();
+		System.out.println("stbatch: "+stbatch);
+	}	
+}
+class Teacher extends Person{
+	double tsal;
+	String initials;
+
+    public Teacher(String pid, String pname, String pdept, double tsal, String initials) {
+        super(pid, pname, pdept);
+        this.tsal = tsal;
+        this.initials = initials;
+    }
+	 public double calculateSalary() {
+	        return tsal;  
+	    }
+	public void display() {
+		super.display();
+		System.out.println("tsal: "+tsal+" , "+"intials: "+initials);
+	}	
+}
+class PartTimeTeacher extends Teacher {
+    double allowance;
+
+    public PartTimeTeacher(String pid, String pname, String pdept, double tsal, String initials, double allowance) {
+        super(pid, pname, pdept, tsal, initials);
+        this.allowance = allowance;
+    }
+
+
+    @Override
+    public double calculateSalary() {
+        return super.calculateSalary() + allowance; // Add allowances for part-time
+    }
+}
+class Course{
+	int ccode;
+	String ctitle;
+	int chrs;
+	public Course(int ccode,String ctitle,int chrs) {
+		 
+		this.ccode=ccode;
+		this.ctitle=ctitle;
+		this.chrs=chrs;
+	}
+	public void display() {
+		 
+		System.out.println("ccode: "+ccode+" , "+"ctitle: "+ctitle+" , "+"chrs: "+chrs);
+	}	
+	
+}
+class CourseOffer{
+    String semester;
+    Course course;
+    Teacher teacher;
+    public CourseOffer(String semester, Course course, Teacher teacher) {
+		this.semester = semester;
+        this.course = course;
+        this.teacher = teacher;
+	}
+    public void display() {
+        System.out.println("Semester: " + semester);
+        course.display();
+        teacher.display();
+    }
+}
+ 
+public class CourseMngtmentSystem {
+public static void main(String[] args) {
+	Student student1 = new Student("S001", "Alice", "Computer Science", 2023);
+    Teacher teacher1 = new Teacher("T001", "Dr. Smith", "Computer Science", 50000, "J.S.");
+    PartTimeTeacher partTimeTeacher = new PartTimeTeacher("T002", "Mr. Johnson", "Mathematics", 30000, "M.J.", 5000);
+    
+    Course course1 = new Course(101, "Data Structures", 3);
+    CourseOffer courseOffer1 = new CourseOffer("Fall 2024", course1, teacher1);
+    CourseOffer courseOffer2 = new CourseOffer("Spring 2025", course1, partTimeTeacher);
+ 
+    System.out.println("Student Information:");
+    student1.display();
+    System.out.println("\nTeacher Information:");
+    teacher1.display();
+    System.out.println("\nPart-Time Teacher Information:");
+    partTimeTeacher.display();
+    System.out.println("\nCourse Offering 1:");
+    courseOffer1.display();
+    System.out.println("\nCourse Offering 2:");
+    courseOffer2.display();
+	
+}
+}

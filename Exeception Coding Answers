@@ -1,0 +1,194 @@
+//Q1
+package ExceptionHandlingCodingQuestions;
+import java.util.Scanner;
+
+ 
+class DotException extends Exception {
+ public DotException(String message) {
+     super(message);
+ }
+}
+
+ 
+class AtTheRateException extends Exception {
+ public AtTheRateException(String message) {
+     super(message);
+ }
+}
+ 
+class DomainException extends Exception {
+ public DomainException(String message) {
+     super(message);
+ }
+}
+
+public class EmailValidator {
+
+ 
+ public static void validateEmail(String email) throws DotException, AtTheRateException, DomainException {
+   
+     if (!email.contains("@")) {
+         throw new AtTheRateException("Invalid '@' usage.");
+     }
+ 
+     if (!email.contains(".")) {
+         throw new DotException("Invalid '.' usage.");
+     }
+ 
+     String[] parts = email.split("@");
+     if (parts.length != 2 || !parts[1].contains(".")) {
+         throw new DotException("Invalid '.' usage after '@'.");
+     }
+     
+     String domainPart = parts[1].substring(parts[1].lastIndexOf(".") + 1);
+     if (!(domainPart.equals("com") || domainPart.equals("in") || domainPart.equals("net") || domainPart.equals("biz"))) {
+         throw new DomainException("Invalid domain name.");
+     }
+ 
+     System.out.println("Valid email address.");
+ }
+
+ public static void main(String[] args) {
+     Scanner scanner = new Scanner(System.in);
+     
+     
+     System.out.println("Enter the email address to validate:");
+     String email = scanner.nextLine();
+   
+     try {
+         validateEmail(email);
+     } catch (DotException | AtTheRateException | DomainException e) {
+         System.out.println("Invalid email address: " + e.getMessage());
+     }
+ }
+}
+
+//Q2
+package ExceptionHandlingCodingQuestions;
+
+public class Demo1 {
+public static void main(String[] args) {
+	try {
+	int a=5/3;
+	System.out.println("the result is: "+a);
+	}
+	catch(Exception e){
+		System.out.println("I am the catch method");
+	}
+	
+	
+}
+}
+
+//Q3
+
+package ExceptionHandlingCodingQuestions;
+
+public class Demo1 {
+public static void main(String[] args) {
+   
+	try{
+		String s=null;
+		System.out.println(s.length());
+	}
+	catch(Exception e){
+		System.out.println("null point exception");
+	}
+	
+	
+}
+}
+
+
+//Q4
+
+package ExceptionHandlingCodingQuestions;
+
+import java.util.Scanner;
+ 
+class User {
+    private String name;
+    private String mobile;
+    private String username;
+    private String password;
+
+     
+    public User(String name, String mobile, String username, String password) {
+        this.name = name;
+        this.mobile = mobile;
+        this.username = username;
+        this.password = password;
+    }
+ 
+    public String getPassword() {
+        return password;
+    }
+}
+
+ 
+class UserBO {
+ 
+    public static void validate(User u) throws Exception {
+        String password = u.getPassword();
+
+     
+        if (password.length() < 10 || password.length() > 20) {
+            throw new Exception("Password length should be between 10 and 20 characters.");
+        }
+
+      
+        boolean hasDigit = false;
+        for (char c : password.toCharArray()) {
+            if (Character.isDigit(c)) {
+                hasDigit = true;
+                break;
+            }
+        }
+        if (!hasDigit) {
+            throw new Exception("Password should contain at least one digit.");
+        }
+ 
+        String specialCharacters = "1@#5%^&*";
+        boolean hasSpecialChar = false;
+        for (char c : password.toCharArray()) {
+            if (specialCharacters.contains(String.valueOf(c))) {
+                hasSpecialChar = true;
+                break;
+            }
+        }
+        if (!hasSpecialChar) {
+            throw new Exception("Password should contain at least one special character (1, @, #, 5, %, ^, &, *).");
+        }
+ 
+        System.out.println("Valid Password.");
+    }
+}
+
+ 
+public class Demo4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+ 
+        System.out.println("Enter Name:");
+        String name = scanner.nextLine();
+
+        System.out.println("Enter Phone Number:");
+        String mobile = scanner.nextLine();
+
+        System.out.println("Enter Username:");
+        String username = scanner.nextLine();
+
+        System.out.println("Enter Password:");
+        String password = scanner.nextLine();
+
+    
+        User user = new User(name, mobile, username, password);
+
+        
+        try {
+            UserBO.validate(user);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}

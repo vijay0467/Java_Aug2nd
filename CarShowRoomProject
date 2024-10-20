@@ -1,0 +1,111 @@
+package ShowRoom.demo;
+
+interface Utility{
+	void get_details();
+	void set_details();
+}
+
+class Showroom{
+	 String showroom_name;
+	    String showroom_address;
+	    int total_employees;
+	    int total_cars_in_stock;
+	    String manager_name;
+	    public void set_details(String name, String address, String manager, int employees, int cars) {
+	        this.showroom_name = name;
+	        this.showroom_address = address;
+	        this.manager_name = manager;
+	        this.total_employees = employees;
+	        this.total_cars_in_stock = cars;
+	    }
+	    public void get_details() {
+	        System.out.println("Showroom Name: " + showroom_name);
+	        System.out.println("Address: " + showroom_address);
+	        System.out.println("Manager: " + manager_name);
+	        System.out.println("Total Employees: " + total_employees);
+	        System.out.println("Cars in Stock: " + total_cars_in_stock);
+	    }
+}
+
+class Cars extends Showroom implements Utility{
+	 String car_name;
+	    String car_color;
+	    String car_fuel_type;
+	    double car_price;
+	    String car_type;
+	    String car_transmission;
+
+	   
+	    public void set_details(String showroom_name, String showroom_address, String manager_name, int employees, int cars,
+	                            String car_name, String car_color, String fuel, double price, String type, String transmission) {
+	         
+	        super.set_details(showroom_name, showroom_address, manager_name, employees, cars);
+	      
+	        this.car_name = car_name;
+	        this.car_color = car_color;
+	        this.car_fuel_type = fuel;
+	        this.car_price = price;
+	        this.car_type = type;
+	        this.car_transmission = transmission;
+	    }
+	    public void get_details() {
+	    
+	        super.get_details();
+	        System.out.println("Car Name: " + car_name);
+	        System.out.println("Color: " + car_color);
+	        System.out.println("Fuel Type: " + car_fuel_type);
+	        System.out.println("Price: $" + car_price);
+	        System.out.println("Type: " + car_type);
+	        System.out.println("Transmission: " + car_transmission);
+	    }
+	@Override
+	public void set_details() {
+		// TODO Auto-generated method stub
+		
+	}	
+}
+public class Employees extends Showroom implements Utility{
+	   int emp_id;
+	    String emp_name;
+	    int emp_age;
+	    String emp_department;
+
+	  
+	    public void set_details(String showroom_name, String showroom_address, String manager_name, int employees, int cars,
+	                            int emp_id, String emp_name, int emp_age, String department) {
+	      
+	        super.set_details(showroom_name, showroom_address, manager_name, employees, cars);
+	       
+	        this.emp_id = emp_id;
+	        this.emp_name = emp_name;
+	        this.emp_age = emp_age;
+	        this.emp_department = department;
+	    }
+	    public void get_details() {
+	        
+	        super.get_details();
+	        System.out.println("Employee ID: " + emp_id);
+	        System.out.println("Name: " + emp_name);
+	        System.out.println("Age: " + emp_age);
+	        System.out.println("Department: " + emp_department);
+	    }
+	@Override
+	public void set_details() {
+		// TODO Auto-generated method stub
+		
+	}
+    public static void main(String[] args) {
+		  
+		 Cars cr=new Cars();
+		 cr.set_details("AutoWorld", "123 Main St", "John Doe", 10, 5, "Tesla Model S", "Red", "Electric", 79999.99, "Sedan", "Automatic");
+		 cr.get_details();
+
+	     System.out.println("-----------------------------");
+	     
+	     Employees emp=new Employees();
+	     emp.set_details("AutoWorld", "123 Main St", "John Doe", 10, 5, 101, "Alice", 28, "Sales");
+	     emp.get_details();
+	}
+
+	 
+}

@@ -1,0 +1,230 @@
+Task 1:
+Entity file:
+package com.demo;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Department {
+    
+	@Id
+	private int deptid;
+	private String deptname;
+	private String deptloc;
+	public int getDeptid() {
+		return deptid;
+	}
+	public void setDeptid(int deptid) {
+		this.deptid = deptid;
+	}
+	public String getDeptname() {
+		return deptname;
+	}
+	public void setDeptname(String deptname) {
+		this.deptname = deptname;
+	}
+	public String getDeptloc() {
+		return deptloc;
+	}
+	public void setDeptloc(String deptloc) {
+		this.deptloc = deptloc;
+	}
+	public Department() {
+		// TODO Auto-generated constructor stub
+	}
+	public Department(int deptid, String deptname, String deptloc) {
+		super();
+		this.deptid = deptid;
+		this.deptname = deptname;
+		this.deptloc = deptloc;
+	}
+	@Override
+	public String toString() {
+		return "Department [deptid=" + deptid + ", deptname=" + deptname + ", deptloc=" + deptloc + "]";
+	}
+	
+}
+
+Test File:
+
+package com.demo;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class Test {
+ public static void main(String[] args) {
+	EntityManagerFactory factory= Persistence.createEntityManagerFactory("gutta");
+	EntityManager entity=factory.createEntityManager();
+	entity.getTransaction().begin();
+	Department dept=new Department(123, "ECE", "Medchal");
+	entity.persist(dept);
+	Department dept1=new Department(124, "CSE", "S");
+	//entity.merge(dept1);
+	entity.persist(dept1);
+	//entity.remove(dept);
+//	List<Department> departments = entity.createQuery("select c from Department c", Department.class).getResultList();
+//    for (Department department : departments) {
+//          System.out.println(department);
+//    }
+//	List<Integer> deptIds = entity.createQuery("select d.deptid from Department d", Integer.class).getResultList();
+//	for (Integer deptId : deptIds) {
+//	    System.out.println(deptId);
+//	}
+//	List<String> deptlocs = entity.createQuery("select d.deptloc from Department d", String.class).getResultList();
+//	for (String deptLoc : deptlocs) {
+//	    System.out.println(deptLoc);
+//	}
+	 
+	List<String> deptlocs = entity.createQuery("select d.deptloc from Department d where d.deptloc = 'S'", String.class)
+            .getResultList();
+          for (String deptLoc : deptlocs) {
+              System.out.println(deptLoc);
+          }
+
+	entity.getTransaction().commit();
+	
+}
+}
+
+Task 2:
+Entity file:
+
+package com.demo;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Manager {
+   @Id
+	private int mgrid;
+	private String mgrname;
+	private int mgrage;
+	private int mgrsal;
+	private String mgrloc;
+	public int getMgrid() {
+		return mgrid;
+	}
+	public void setMgrid(int mgrid) {
+		this.mgrid = mgrid;
+	}
+	public String getMgrname() {
+		return mgrname;
+	}
+	public void setMgrname(String mgrname) {
+		this.mgrname = mgrname;
+	}
+	public int getMgrage() {
+		return mgrage;
+	}
+	public void setMgrage(int mgrage) {
+		this.mgrage = mgrage;
+	}
+	public int getMgrsal() {
+		return mgrsal;
+	}
+	public void setMgrsal(int mgrsal) {
+		this.mgrsal = mgrsal;
+	}
+	public String getMgrloc() {
+		return mgrloc;
+	}
+	public void setMgrloc(String mgrloc) {
+		this.mgrloc = mgrloc;
+	}
+	public Manager(int mgrid, String mgrname, int mgrage, int mgrsal, String mgrloc) {
+		super();
+		this.mgrid = mgrid;
+		this.mgrname = mgrname;
+		this.mgrage = mgrage;
+		this.mgrsal = mgrsal;
+		this.mgrloc = mgrloc;
+	}
+	
+	public Manager() {
+		// TODO Auto-generated constructor stub
+	}
+//	@Override
+//	public String toString() {
+//		return "Manager [mgrid=" + mgrid + ", mgrname=" + mgrname + ", mgrage=" + mgrage + ", mgrsal=" + mgrsal
+//				+ ", mgrloc=" + mgrloc + "]";
+//	}
+	
+	@Override
+	public String toString() {
+	    return "Manager [id=" + mgrid + ", name=" + mgrname + ", age=" + mgrage + "]";
+	}
+
+}
+
+Test File:
+package com.demo;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class Test1 {
+public static void main(String[] args) {
+	EntityManagerFactory factory= Persistence.createEntityManagerFactory("gutta1");
+	EntityManager entity=factory.createEntityManager();
+	entity.getTransaction().begin();
+	Manager mgr=new Manager(12, "vijay", 20, 20000, "hyd");
+	Manager mgr1=new Manager(13, "ajay", 30, 30000, "kphb");
+	Manager mgr2=new Manager(14, "sanjay", 50, 70000, "sr nagar");
+	entity.persist(mgr);
+	entity.persist(mgr1);
+	entity.merge(mgr2);
+//	List<Manager>mgrs=entity.createQuery("select c from Manager c",Manager.class).getResultList();
+//	for(Manager Mgr:mgrs) {
+//		System.out.println(Mgr);
+//	}
+//	Integer maxMgrId = entity.createQuery("select max(m.mgrid) from Manager m", Integer.class)
+//            .getSingleResult();
+//    System.out.println("Maximum Manager ID: " + maxMgrId);
+	
+//	Integer maxMgrSal = entity.createQuery("select max(m.mgrsal) from Manager m", Integer.class)
+//            .getSingleResult();
+//        System.out.println("Maximum Manager Sal: " + maxMgrSal);
+    
+//	Integer maxMgrAge = entity.createQuery("select min(m.mgrage) from Manager m", Integer.class)
+//            .getSingleResult();
+//System.out.println("Maximum Manager ID: " + maxMgrAge);
+       
+//	List<Manager> managers = entity.createQuery("select m from Manager m order by m.mgrage desc", Manager.class)
+//            .getResultList();
+//           for (Manager manager : managers) {
+//                  System.out.println(manager);
+//            }
+	
+//	Long count = entity.createQuery("select count(m) from Manager m", Long.class)
+//            .getSingleResult();
+//          System.out.println("Number of Managers: " + count);
+   
+//	List<Integer> ages = entity.createQuery("select m.mgrage from Manager m where m.mgrage in (20, 42, 50)", Integer.class)
+//            .getResultList();
+//for (Integer age : ages) {
+//System.out.println("Manager Age: " + age);
+//}
+     
+//	List<Manager> managers = entity.createQuery("select m from Manager m where m.mgrage between 20 and 45", Manager.class)
+//            .getResultList();
+//for (Manager manager : managers) {
+//System.out.println(manager);
+//}
+	
+	entity.remove(mgr1);
+
+	
+
+	entity.getTransaction().commit();
+}
+}
+
